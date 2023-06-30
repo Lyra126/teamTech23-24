@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o CMakeFiles/TestSGP4.dir/main.cpp.o -c /Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/main.cpp",
+  "file": "/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/main.cpp"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o CMakeFiles/TestSGP4.dir/sgp4-master/libsgp4/Tle.cc.o -c /Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/sgp4-master/libsgp4/Tle.cc",
+  "file": "/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/sgp4-master/libsgp4/Tle.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o CMakeFiles/TestSGP4.dir/sgp4-master/libsgp4/TimeSpan.cc.o -c /Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/sgp4-master/libsgp4/TimeSpan.cc",
+  "file": "/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/sgp4-master/libsgp4/TimeSpan.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o CMakeFiles/TestSGP4.dir/Satellite.cpp.o -c /Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/Satellite.cpp",
+  "file": "/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/Satellite.cpp"
+}
+]

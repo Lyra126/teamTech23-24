@@ -1,0 +1,182 @@
+[
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o libsgp4/CMakeFiles/sgp4.dir/CoordGeodetic.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/CoordGeodetic.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/CoordGeodetic.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o libsgp4/CMakeFiles/sgp4.dir/CoordTopocentric.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/CoordTopocentric.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/CoordTopocentric.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o libsgp4/CMakeFiles/sgp4.dir/DateTime.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/DateTime.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/DateTime.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o libsgp4/CMakeFiles/sgp4.dir/DecayedException.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/DecayedException.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/DecayedException.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o libsgp4/CMakeFiles/sgp4.dir/Eci.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Eci.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Eci.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o libsgp4/CMakeFiles/sgp4.dir/Globals.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Globals.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Globals.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o libsgp4/CMakeFiles/sgp4.dir/Observer.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Observer.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Observer.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o libsgp4/CMakeFiles/sgp4.dir/OrbitalElements.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/OrbitalElements.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/OrbitalElements.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o libsgp4/CMakeFiles/sgp4.dir/SGP4.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/SGP4.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/SGP4.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o libsgp4/CMakeFiles/sgp4.dir/SatelliteException.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/SatelliteException.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/SatelliteException.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o libsgp4/CMakeFiles/sgp4.dir/SolarPosition.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/SolarPosition.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/SolarPosition.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o libsgp4/CMakeFiles/sgp4.dir/TimeSpan.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/TimeSpan.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/TimeSpan.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o libsgp4/CMakeFiles/sgp4.dir/Tle.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Tle.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Tle.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o libsgp4/CMakeFiles/sgp4.dir/TleException.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/TleException.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/TleException.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o libsgp4/CMakeFiles/sgp4.dir/Util.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Util.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Util.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o libsgp4/CMakeFiles/sgp4.dir/Vector.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Vector.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Vector.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dsgp4s_EXPORTS -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17 -o libsgp4/CMakeFiles/sgp4s.dir/CoordGeodetic.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/CoordGeodetic.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/CoordGeodetic.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dsgp4s_EXPORTS -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17 -o libsgp4/CMakeFiles/sgp4s.dir/CoordTopocentric.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/CoordTopocentric.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/CoordTopocentric.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dsgp4s_EXPORTS -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17 -o libsgp4/CMakeFiles/sgp4s.dir/DateTime.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/DateTime.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/DateTime.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dsgp4s_EXPORTS -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17 -o libsgp4/CMakeFiles/sgp4s.dir/DecayedException.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/DecayedException.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/DecayedException.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dsgp4s_EXPORTS -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17 -o libsgp4/CMakeFiles/sgp4s.dir/Eci.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Eci.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Eci.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dsgp4s_EXPORTS -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17 -o libsgp4/CMakeFiles/sgp4s.dir/Globals.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Globals.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Globals.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dsgp4s_EXPORTS -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17 -o libsgp4/CMakeFiles/sgp4s.dir/Observer.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Observer.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Observer.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dsgp4s_EXPORTS -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17 -o libsgp4/CMakeFiles/sgp4s.dir/OrbitalElements.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/OrbitalElements.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/OrbitalElements.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dsgp4s_EXPORTS -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17 -o libsgp4/CMakeFiles/sgp4s.dir/SGP4.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/SGP4.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/SGP4.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dsgp4s_EXPORTS -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17 -o libsgp4/CMakeFiles/sgp4s.dir/SatelliteException.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/SatelliteException.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/SatelliteException.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dsgp4s_EXPORTS -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17 -o libsgp4/CMakeFiles/sgp4s.dir/SolarPosition.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/SolarPosition.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/SolarPosition.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dsgp4s_EXPORTS -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17 -o libsgp4/CMakeFiles/sgp4s.dir/TimeSpan.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/TimeSpan.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/TimeSpan.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dsgp4s_EXPORTS -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17 -o libsgp4/CMakeFiles/sgp4s.dir/Tle.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Tle.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Tle.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dsgp4s_EXPORTS -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17 -o libsgp4/CMakeFiles/sgp4s.dir/TleException.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/TleException.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/TleException.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dsgp4s_EXPORTS -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17 -o libsgp4/CMakeFiles/sgp4s.dir/Util.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Util.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Util.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -Dsgp4s_EXPORTS -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17 -o libsgp4/CMakeFiles/sgp4s.dir/Vector.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Vector.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Vector.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o sattrack/CMakeFiles/sattrack.dir/sattrack.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/sattrack/sattrack.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/sattrack/sattrack.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o runtest/CMakeFiles/runtest.dir/runtest.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/runtest/runtest.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/runtest/runtest.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o passpredict/CMakeFiles/passpredict.dir/passpredict.cc.o -c /Users/rebeccadiaz/Desktop/sgp4-master/passpredict/passpredict.cc",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/passpredict/passpredict.cc"
+},
+{
+  "directory": "/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o passpredict/CMakeFiles/passpredict.dir/__/Satellite.cpp.o -c /Users/rebeccadiaz/Desktop/sgp4-master/Satellite.cpp",
+  "file": "/Users/rebeccadiaz/Desktop/sgp4-master/Satellite.cpp"
+}
+]

@@ -1,0 +1,873 @@
+## This file contains all the build statements describing the
+# compilation DAG.
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# 
+# Which is the root file.
+# =============================================================================
+
+# =============================================================================
+# Project: SGP4
+# Configurations: Debug
+# =============================================================================
+
+#############################################
+# Minimal version of Ninja required by this file
+
+ninja_required_version = 1.5
+
+
+#############################################
+# Set configuration variable for custom commands.
+
+CONFIGURATION = Debug
+# =============================================================================
+# Include auxiliary files.
+
+
+#############################################
+# Include rules file.
+
+include CMakeFiles/rules.ninja
+
+# =============================================================================
+
+#############################################
+# Logical path to working directory; prefix for absolute paths.
+
+cmake_ninja_workdir = /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/rebeccadiaz/Desktop/sgp4-master -B/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles/install.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install/local: phony CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build install/strip: phony CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/rebeccadiaz/Desktop/sgp4-master/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target sgp4
+
+
+#############################################
+# Order-only phony target for sgp4
+
+build cmake_object_order_depends_target_sgp4: phony || libsgp4/CMakeFiles/sgp4.dir
+
+build libsgp4/CMakeFiles/sgp4.dir/CoordGeodetic.cc.o: CXX_COMPILER__sgp4_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/CoordGeodetic.cc || cmake_object_order_depends_target_sgp4
+  DEP_FILE = libsgp4/CMakeFiles/sgp4.dir/CoordGeodetic.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4.dir
+
+build libsgp4/CMakeFiles/sgp4.dir/CoordTopocentric.cc.o: CXX_COMPILER__sgp4_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/CoordTopocentric.cc || cmake_object_order_depends_target_sgp4
+  DEP_FILE = libsgp4/CMakeFiles/sgp4.dir/CoordTopocentric.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4.dir
+
+build libsgp4/CMakeFiles/sgp4.dir/DateTime.cc.o: CXX_COMPILER__sgp4_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/DateTime.cc || cmake_object_order_depends_target_sgp4
+  DEP_FILE = libsgp4/CMakeFiles/sgp4.dir/DateTime.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4.dir
+
+build libsgp4/CMakeFiles/sgp4.dir/DecayedException.cc.o: CXX_COMPILER__sgp4_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/DecayedException.cc || cmake_object_order_depends_target_sgp4
+  DEP_FILE = libsgp4/CMakeFiles/sgp4.dir/DecayedException.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4.dir
+
+build libsgp4/CMakeFiles/sgp4.dir/Eci.cc.o: CXX_COMPILER__sgp4_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Eci.cc || cmake_object_order_depends_target_sgp4
+  DEP_FILE = libsgp4/CMakeFiles/sgp4.dir/Eci.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4.dir
+
+build libsgp4/CMakeFiles/sgp4.dir/Globals.cc.o: CXX_COMPILER__sgp4_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Globals.cc || cmake_object_order_depends_target_sgp4
+  DEP_FILE = libsgp4/CMakeFiles/sgp4.dir/Globals.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4.dir
+
+build libsgp4/CMakeFiles/sgp4.dir/Observer.cc.o: CXX_COMPILER__sgp4_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Observer.cc || cmake_object_order_depends_target_sgp4
+  DEP_FILE = libsgp4/CMakeFiles/sgp4.dir/Observer.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4.dir
+
+build libsgp4/CMakeFiles/sgp4.dir/OrbitalElements.cc.o: CXX_COMPILER__sgp4_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/OrbitalElements.cc || cmake_object_order_depends_target_sgp4
+  DEP_FILE = libsgp4/CMakeFiles/sgp4.dir/OrbitalElements.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4.dir
+
+build libsgp4/CMakeFiles/sgp4.dir/SGP4.cc.o: CXX_COMPILER__sgp4_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/SGP4.cc || cmake_object_order_depends_target_sgp4
+  DEP_FILE = libsgp4/CMakeFiles/sgp4.dir/SGP4.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4.dir
+
+build libsgp4/CMakeFiles/sgp4.dir/SatelliteException.cc.o: CXX_COMPILER__sgp4_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/SatelliteException.cc || cmake_object_order_depends_target_sgp4
+  DEP_FILE = libsgp4/CMakeFiles/sgp4.dir/SatelliteException.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4.dir
+
+build libsgp4/CMakeFiles/sgp4.dir/SolarPosition.cc.o: CXX_COMPILER__sgp4_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/SolarPosition.cc || cmake_object_order_depends_target_sgp4
+  DEP_FILE = libsgp4/CMakeFiles/sgp4.dir/SolarPosition.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4.dir
+
+build libsgp4/CMakeFiles/sgp4.dir/TimeSpan.cc.o: CXX_COMPILER__sgp4_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/TimeSpan.cc || cmake_object_order_depends_target_sgp4
+  DEP_FILE = libsgp4/CMakeFiles/sgp4.dir/TimeSpan.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4.dir
+
+build libsgp4/CMakeFiles/sgp4.dir/Tle.cc.o: CXX_COMPILER__sgp4_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Tle.cc || cmake_object_order_depends_target_sgp4
+  DEP_FILE = libsgp4/CMakeFiles/sgp4.dir/Tle.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4.dir
+
+build libsgp4/CMakeFiles/sgp4.dir/TleException.cc.o: CXX_COMPILER__sgp4_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/TleException.cc || cmake_object_order_depends_target_sgp4
+  DEP_FILE = libsgp4/CMakeFiles/sgp4.dir/TleException.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4.dir
+
+build libsgp4/CMakeFiles/sgp4.dir/Util.cc.o: CXX_COMPILER__sgp4_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Util.cc || cmake_object_order_depends_target_sgp4
+  DEP_FILE = libsgp4/CMakeFiles/sgp4.dir/Util.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4.dir
+
+build libsgp4/CMakeFiles/sgp4.dir/Vector.cc.o: CXX_COMPILER__sgp4_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Vector.cc || cmake_object_order_depends_target_sgp4
+  DEP_FILE = libsgp4/CMakeFiles/sgp4.dir/Vector.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target sgp4
+
+
+#############################################
+# Link the static library libsgp4/libsgp4.a
+
+build libsgp4/libsgp4.a: CXX_STATIC_LIBRARY_LINKER__sgp4_Debug libsgp4/CMakeFiles/sgp4.dir/CoordGeodetic.cc.o libsgp4/CMakeFiles/sgp4.dir/CoordTopocentric.cc.o libsgp4/CMakeFiles/sgp4.dir/DateTime.cc.o libsgp4/CMakeFiles/sgp4.dir/DecayedException.cc.o libsgp4/CMakeFiles/sgp4.dir/Eci.cc.o libsgp4/CMakeFiles/sgp4.dir/Globals.cc.o libsgp4/CMakeFiles/sgp4.dir/Observer.cc.o libsgp4/CMakeFiles/sgp4.dir/OrbitalElements.cc.o libsgp4/CMakeFiles/sgp4.dir/SGP4.cc.o libsgp4/CMakeFiles/sgp4.dir/SatelliteException.cc.o libsgp4/CMakeFiles/sgp4.dir/SolarPosition.cc.o libsgp4/CMakeFiles/sgp4.dir/TimeSpan.cc.o libsgp4/CMakeFiles/sgp4.dir/Tle.cc.o libsgp4/CMakeFiles/sgp4.dir/TleException.cc.o libsgp4/CMakeFiles/sgp4.dir/Util.cc.o libsgp4/CMakeFiles/sgp4.dir/Vector.cc.o
+  ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk
+  LANGUAGE_COMPILE_FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = libsgp4/libsgp4.a
+  TARGET_PDB = sgp4.a.dbg
+
+# =============================================================================
+# Object build statements for SHARED_LIBRARY target sgp4s
+
+
+#############################################
+# Order-only phony target for sgp4s
+
+build cmake_object_order_depends_target_sgp4s: phony || libsgp4/CMakeFiles/sgp4s.dir
+
+build libsgp4/CMakeFiles/sgp4s.dir/CoordGeodetic.cc.o: CXX_COMPILER__sgp4s_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/CoordGeodetic.cc || cmake_object_order_depends_target_sgp4s
+  DEFINES = -Dsgp4s_EXPORTS
+  DEP_FILE = libsgp4/CMakeFiles/sgp4s.dir/CoordGeodetic.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4s.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4s.dir
+
+build libsgp4/CMakeFiles/sgp4s.dir/CoordTopocentric.cc.o: CXX_COMPILER__sgp4s_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/CoordTopocentric.cc || cmake_object_order_depends_target_sgp4s
+  DEFINES = -Dsgp4s_EXPORTS
+  DEP_FILE = libsgp4/CMakeFiles/sgp4s.dir/CoordTopocentric.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4s.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4s.dir
+
+build libsgp4/CMakeFiles/sgp4s.dir/DateTime.cc.o: CXX_COMPILER__sgp4s_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/DateTime.cc || cmake_object_order_depends_target_sgp4s
+  DEFINES = -Dsgp4s_EXPORTS
+  DEP_FILE = libsgp4/CMakeFiles/sgp4s.dir/DateTime.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4s.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4s.dir
+
+build libsgp4/CMakeFiles/sgp4s.dir/DecayedException.cc.o: CXX_COMPILER__sgp4s_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/DecayedException.cc || cmake_object_order_depends_target_sgp4s
+  DEFINES = -Dsgp4s_EXPORTS
+  DEP_FILE = libsgp4/CMakeFiles/sgp4s.dir/DecayedException.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4s.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4s.dir
+
+build libsgp4/CMakeFiles/sgp4s.dir/Eci.cc.o: CXX_COMPILER__sgp4s_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Eci.cc || cmake_object_order_depends_target_sgp4s
+  DEFINES = -Dsgp4s_EXPORTS
+  DEP_FILE = libsgp4/CMakeFiles/sgp4s.dir/Eci.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4s.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4s.dir
+
+build libsgp4/CMakeFiles/sgp4s.dir/Globals.cc.o: CXX_COMPILER__sgp4s_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Globals.cc || cmake_object_order_depends_target_sgp4s
+  DEFINES = -Dsgp4s_EXPORTS
+  DEP_FILE = libsgp4/CMakeFiles/sgp4s.dir/Globals.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4s.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4s.dir
+
+build libsgp4/CMakeFiles/sgp4s.dir/Observer.cc.o: CXX_COMPILER__sgp4s_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Observer.cc || cmake_object_order_depends_target_sgp4s
+  DEFINES = -Dsgp4s_EXPORTS
+  DEP_FILE = libsgp4/CMakeFiles/sgp4s.dir/Observer.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4s.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4s.dir
+
+build libsgp4/CMakeFiles/sgp4s.dir/OrbitalElements.cc.o: CXX_COMPILER__sgp4s_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/OrbitalElements.cc || cmake_object_order_depends_target_sgp4s
+  DEFINES = -Dsgp4s_EXPORTS
+  DEP_FILE = libsgp4/CMakeFiles/sgp4s.dir/OrbitalElements.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4s.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4s.dir
+
+build libsgp4/CMakeFiles/sgp4s.dir/SGP4.cc.o: CXX_COMPILER__sgp4s_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/SGP4.cc || cmake_object_order_depends_target_sgp4s
+  DEFINES = -Dsgp4s_EXPORTS
+  DEP_FILE = libsgp4/CMakeFiles/sgp4s.dir/SGP4.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4s.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4s.dir
+
+build libsgp4/CMakeFiles/sgp4s.dir/SatelliteException.cc.o: CXX_COMPILER__sgp4s_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/SatelliteException.cc || cmake_object_order_depends_target_sgp4s
+  DEFINES = -Dsgp4s_EXPORTS
+  DEP_FILE = libsgp4/CMakeFiles/sgp4s.dir/SatelliteException.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4s.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4s.dir
+
+build libsgp4/CMakeFiles/sgp4s.dir/SolarPosition.cc.o: CXX_COMPILER__sgp4s_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/SolarPosition.cc || cmake_object_order_depends_target_sgp4s
+  DEFINES = -Dsgp4s_EXPORTS
+  DEP_FILE = libsgp4/CMakeFiles/sgp4s.dir/SolarPosition.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4s.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4s.dir
+
+build libsgp4/CMakeFiles/sgp4s.dir/TimeSpan.cc.o: CXX_COMPILER__sgp4s_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/TimeSpan.cc || cmake_object_order_depends_target_sgp4s
+  DEFINES = -Dsgp4s_EXPORTS
+  DEP_FILE = libsgp4/CMakeFiles/sgp4s.dir/TimeSpan.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4s.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4s.dir
+
+build libsgp4/CMakeFiles/sgp4s.dir/Tle.cc.o: CXX_COMPILER__sgp4s_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Tle.cc || cmake_object_order_depends_target_sgp4s
+  DEFINES = -Dsgp4s_EXPORTS
+  DEP_FILE = libsgp4/CMakeFiles/sgp4s.dir/Tle.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4s.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4s.dir
+
+build libsgp4/CMakeFiles/sgp4s.dir/TleException.cc.o: CXX_COMPILER__sgp4s_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/TleException.cc || cmake_object_order_depends_target_sgp4s
+  DEFINES = -Dsgp4s_EXPORTS
+  DEP_FILE = libsgp4/CMakeFiles/sgp4s.dir/TleException.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4s.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4s.dir
+
+build libsgp4/CMakeFiles/sgp4s.dir/Util.cc.o: CXX_COMPILER__sgp4s_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Util.cc || cmake_object_order_depends_target_sgp4s
+  DEFINES = -Dsgp4s_EXPORTS
+  DEP_FILE = libsgp4/CMakeFiles/sgp4s.dir/Util.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4s.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4s.dir
+
+build libsgp4/CMakeFiles/sgp4s.dir/Vector.cc.o: CXX_COMPILER__sgp4s_Debug /Users/rebeccadiaz/Desktop/sgp4-master/libsgp4/Vector.cc || cmake_object_order_depends_target_sgp4s
+  DEFINES = -Dsgp4s_EXPORTS
+  DEP_FILE = libsgp4/CMakeFiles/sgp4s.dir/Vector.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fPIC -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4s.dir
+  OBJECT_FILE_DIR = libsgp4/CMakeFiles/sgp4s.dir
+
+
+# =============================================================================
+# Link build statements for SHARED_LIBRARY target sgp4s
+
+
+#############################################
+# Link the shared library libsgp4/libsgp4s.dylib
+
+build libsgp4/libsgp4s.dylib: CXX_SHARED_LIBRARY_LINKER__sgp4s_Debug libsgp4/CMakeFiles/sgp4s.dir/CoordGeodetic.cc.o libsgp4/CMakeFiles/sgp4s.dir/CoordTopocentric.cc.o libsgp4/CMakeFiles/sgp4s.dir/DateTime.cc.o libsgp4/CMakeFiles/sgp4s.dir/DecayedException.cc.o libsgp4/CMakeFiles/sgp4s.dir/Eci.cc.o libsgp4/CMakeFiles/sgp4s.dir/Globals.cc.o libsgp4/CMakeFiles/sgp4s.dir/Observer.cc.o libsgp4/CMakeFiles/sgp4s.dir/OrbitalElements.cc.o libsgp4/CMakeFiles/sgp4s.dir/SGP4.cc.o libsgp4/CMakeFiles/sgp4s.dir/SatelliteException.cc.o libsgp4/CMakeFiles/sgp4s.dir/SolarPosition.cc.o libsgp4/CMakeFiles/sgp4s.dir/TimeSpan.cc.o libsgp4/CMakeFiles/sgp4s.dir/Tle.cc.o libsgp4/CMakeFiles/sgp4s.dir/TleException.cc.o libsgp4/CMakeFiles/sgp4s.dir/Util.cc.o libsgp4/CMakeFiles/sgp4s.dir/Vector.cc.o
+  ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk
+  INSTALLNAME_DIR = @rpath/
+  LANGUAGE_COMPILE_FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g
+  OBJECT_DIR = libsgp4/CMakeFiles/sgp4s.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  SONAME = libsgp4s.dylib
+  SONAME_FLAG = -install_name
+  TARGET_FILE = libsgp4/libsgp4s.dylib
+  TARGET_PDB = sgp4s.dylib.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build libsgp4/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/libsgp4 && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build libsgp4/edit_cache: phony libsgp4/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build libsgp4/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/libsgp4 && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/rebeccadiaz/Desktop/sgp4-master -B/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build libsgp4/rebuild_cache: phony libsgp4/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build libsgp4/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build libsgp4/CMakeFiles/install.util: CUSTOM_COMMAND libsgp4/all
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/libsgp4 && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build libsgp4/install: phony libsgp4/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build libsgp4/CMakeFiles/install/local.util: CUSTOM_COMMAND libsgp4/all
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/libsgp4 && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build libsgp4/install/local: phony libsgp4/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build libsgp4/CMakeFiles/install/strip.util: CUSTOM_COMMAND libsgp4/all
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/libsgp4 && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build libsgp4/install/strip: phony libsgp4/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/rebeccadiaz/Desktop/sgp4-master/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target sattrack
+
+
+#############################################
+# Order-only phony target for sattrack
+
+build cmake_object_order_depends_target_sattrack: phony || cmake_object_order_depends_target_sgp4
+
+build sattrack/CMakeFiles/sattrack.dir/sattrack.cc.o: CXX_COMPILER__sattrack_Debug /Users/rebeccadiaz/Desktop/sgp4-master/sattrack/sattrack.cc || cmake_object_order_depends_target_sattrack
+  DEP_FILE = sattrack/CMakeFiles/sattrack.dir/sattrack.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = sattrack/CMakeFiles/sattrack.dir
+  OBJECT_FILE_DIR = sattrack/CMakeFiles/sattrack.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target sattrack
+
+
+#############################################
+# Link the executable sattrack/sattrack
+
+build sattrack/sattrack: CXX_EXECUTABLE_LINKER__sattrack_Debug sattrack/CMakeFiles/sattrack.dir/sattrack.cc.o | libsgp4/libsgp4.a || libsgp4/libsgp4.a
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk
+  LINK_LIBRARIES = libsgp4/libsgp4.a
+  OBJECT_DIR = sattrack/CMakeFiles/sattrack.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = sattrack/sattrack
+  TARGET_PDB = sattrack.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build sattrack/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/sattrack && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build sattrack/edit_cache: phony sattrack/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build sattrack/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/sattrack && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/rebeccadiaz/Desktop/sgp4-master -B/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build sattrack/rebuild_cache: phony sattrack/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build sattrack/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build sattrack/CMakeFiles/install.util: CUSTOM_COMMAND sattrack/all
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/sattrack && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build sattrack/install: phony sattrack/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build sattrack/CMakeFiles/install/local.util: CUSTOM_COMMAND sattrack/all
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/sattrack && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build sattrack/install/local: phony sattrack/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build sattrack/CMakeFiles/install/strip.util: CUSTOM_COMMAND sattrack/all
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/sattrack && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build sattrack/install/strip: phony sattrack/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/rebeccadiaz/Desktop/sgp4-master/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target runtest
+
+
+#############################################
+# Order-only phony target for runtest
+
+build cmake_object_order_depends_target_runtest: phony || cmake_object_order_depends_target_sgp4
+
+build runtest/CMakeFiles/runtest.dir/runtest.cc.o: CXX_COMPILER__runtest_Debug /Users/rebeccadiaz/Desktop/sgp4-master/runtest/runtest.cc || cmake_object_order_depends_target_runtest
+  DEP_FILE = runtest/CMakeFiles/runtest.dir/runtest.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = runtest/CMakeFiles/runtest.dir
+  OBJECT_FILE_DIR = runtest/CMakeFiles/runtest.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target runtest
+
+
+#############################################
+# Link the executable runtest/runtest
+
+build runtest/runtest: CXX_EXECUTABLE_LINKER__runtest_Debug runtest/CMakeFiles/runtest.dir/runtest.cc.o | libsgp4/libsgp4.a || libsgp4/libsgp4.a
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk
+  LINK_LIBRARIES = libsgp4/libsgp4.a
+  OBJECT_DIR = runtest/CMakeFiles/runtest.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = runtest/runtest
+  TARGET_PDB = runtest.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build runtest/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/runtest && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build runtest/edit_cache: phony runtest/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build runtest/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/runtest && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/rebeccadiaz/Desktop/sgp4-master -B/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build runtest/rebuild_cache: phony runtest/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build runtest/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build runtest/CMakeFiles/install.util: CUSTOM_COMMAND runtest/all
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/runtest && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build runtest/install: phony runtest/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build runtest/CMakeFiles/install/local.util: CUSTOM_COMMAND runtest/all
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/runtest && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build runtest/install/local: phony runtest/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build runtest/CMakeFiles/install/strip.util: CUSTOM_COMMAND runtest/all
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/runtest && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build runtest/install/strip: phony runtest/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/rebeccadiaz/Desktop/sgp4-master/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target passpredict
+
+
+#############################################
+# Order-only phony target for passpredict
+
+build cmake_object_order_depends_target_passpredict: phony || cmake_object_order_depends_target_sgp4
+
+build passpredict/CMakeFiles/passpredict.dir/passpredict.cc.o: CXX_COMPILER__passpredict_Debug /Users/rebeccadiaz/Desktop/sgp4-master/passpredict/passpredict.cc || cmake_object_order_depends_target_passpredict
+  DEP_FILE = passpredict/CMakeFiles/passpredict.dir/passpredict.cc.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = passpredict/CMakeFiles/passpredict.dir
+  OBJECT_FILE_DIR = passpredict/CMakeFiles/passpredict.dir
+
+build passpredict/CMakeFiles/passpredict.dir/__/Satellite.cpp.o: CXX_COMPILER__passpredict_Debug /Users/rebeccadiaz/Desktop/sgp4-master/Satellite.cpp || cmake_object_order_depends_target_passpredict
+  DEP_FILE = passpredict/CMakeFiles/passpredict.dir/__/Satellite.cpp.o.d
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17
+  INCLUDES = -I/Users/rebeccadiaz/Desktop/sgp4-master/libsgp4
+  OBJECT_DIR = passpredict/CMakeFiles/passpredict.dir
+  OBJECT_FILE_DIR = passpredict/CMakeFiles/passpredict.dir/__
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target passpredict
+
+
+#############################################
+# Link the executable passpredict/passpredict
+
+build passpredict/passpredict: CXX_EXECUTABLE_LINKER__passpredict_Debug passpredict/CMakeFiles/passpredict.dir/passpredict.cc.o passpredict/CMakeFiles/passpredict.dir/__/Satellite.cpp.o | libsgp4/libsgp4.a || libsgp4/libsgp4.a
+  FLAGS = -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk
+  LINK_LIBRARIES = libsgp4/libsgp4.a
+  OBJECT_DIR = passpredict/CMakeFiles/passpredict.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = passpredict/passpredict
+  TARGET_PDB = passpredict.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build passpredict/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/passpredict && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build passpredict/edit_cache: phony passpredict/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build passpredict/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/passpredict && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/rebeccadiaz/Desktop/sgp4-master -B/Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build passpredict/rebuild_cache: phony passpredict/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build passpredict/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build passpredict/CMakeFiles/install.util: CUSTOM_COMMAND passpredict/all
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/passpredict && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build passpredict/install: phony passpredict/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build passpredict/CMakeFiles/install/local.util: CUSTOM_COMMAND passpredict/all
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/passpredict && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build passpredict/install/local: phony passpredict/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build passpredict/CMakeFiles/install/strip.util: CUSTOM_COMMAND passpredict/all
+  COMMAND = cd /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/passpredict && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build passpredict/install/strip: phony passpredict/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Target aliases.
+
+build libsgp4.a: phony libsgp4/libsgp4.a
+
+build libsgp4s.dylib: phony libsgp4/libsgp4s.dylib
+
+build passpredict: phony passpredict/passpredict
+
+build runtest: phony runtest/runtest
+
+build sattrack: phony sattrack/sattrack
+
+build sgp4: phony libsgp4/libsgp4.a
+
+build sgp4s: phony libsgp4/libsgp4s.dylib
+
+# =============================================================================
+# Folder targets.
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug
+
+build all: phony libsgp4/all sattrack/all runtest/all passpredict/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/libsgp4
+
+build libsgp4/all: phony libsgp4/libsgp4.a libsgp4/libsgp4s.dylib
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/passpredict
+
+build passpredict/all: phony passpredict/passpredict
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/runtest
+
+build runtest/all: phony runtest/runtest
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/rebeccadiaz/Desktop/sgp4-master/cmake-build-debug/sattrack
+
+build sattrack/all: phony sattrack/sattrack
+
+# =============================================================================
+# Built-in targets
+
+
+#############################################
+# Re-run CMake if any of its inputs changed.
+
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../libsgp4/CMakeLists.txt ../passpredict/CMakeLists.txt ../runtest/CMakeLists.txt ../sattrack/CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake
+  pool = console
+
+
+#############################################
+# A missing CMake input file is not an error.
+
+build ../CMakeLists.txt ../libsgp4/CMakeLists.txt ../passpredict/CMakeLists.txt ../runtest/CMakeLists.txt ../sattrack/CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake: phony
+
+
+#############################################
+# Clean all the built files.
+
+build clean: CLEAN
+
+
+#############################################
+# Print all primary targets available.
+
+build help: HELP
+
+
+#############################################
+# Make the all target the default.
+
+default all
