@@ -1,10 +1,10 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
-#include "sgp4-master/libsgp4/SGP4.h"
+#include "libsgp4/SGP4.h"
 #include "Satellite.h"
-#include "sgp4-master/libsgp4/Tle.h"
-#include "sgp4-master/libsgp4/DateTime.h"
+#include "libsgp4/Tle.h"
+#include "libsgp4/DateTime.h"
 #include <vector>
 #include <string>
 #include <queue>

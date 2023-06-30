@@ -5,11 +5,11 @@
 #pragma once
 
 #include <vector>
-#include "ibsgp4/Tle.h"
+#include "libsgp4/Tle.h"
 #include "libsgp4/DateTime.h"
 #include "libsgp4/Eci.h"
 #include "libsgp4/SGP4.h"
-#include "ibsgp4/CoordTopocentric.h"
+#include "libsgp4/CoordTopocentric.h"
 #include "libsgp4/CoordGeodetic.h"
 #include "libsgp4/Observer.h"
 
