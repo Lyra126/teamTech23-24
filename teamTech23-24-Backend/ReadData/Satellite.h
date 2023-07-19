@@ -4,12 +4,13 @@
 
 #pragma once
 
+#include <utility>
 #include <vector>
-#include "ibsgp4/Tle.h"
+#include "libsgp4/Tle.h"
 #include "libsgp4/DateTime.h"
 #include "libsgp4/Eci.h"
 #include "libsgp4/SGP4.h"
-#include "ibsgp4/CoordTopocentric.h"
+#include "libsgp4/CoordTopocentric.h"
 #include "libsgp4/CoordGeodetic.h"
 #include "libsgp4/Observer.h"
 
@@ -35,6 +36,8 @@ private:
     int rank;
     bool constructorSuccess;
 
+    int passNumber;
+
     // For the database
     std::string name;
     std::string startString;
@@ -45,6 +48,7 @@ public:
     Satellite(libsgp4::Tle tle1, libsgp4::DateTime currentTime): tle(tle1), dt(currentTime), eci(dt, 1, 1, 1), obs(29,82,1), sgp4(tle){
         constructorSuccess = true;
         maxElevation = 0;
+        passNumber = -1;
         try{
             eci = sgp4.FindPosition(dt);
             geo = eci.ToGeodetic();
@@ -54,6 +58,7 @@ public:
         }
 
     }
+
 
     bool isLEO();
 
@@ -79,9 +84,7 @@ public:
 
     libsgp4::DateTime getEndTime();
 
-    libsgp4::DateTime setStartTime(libsgp4::DateTime st);
-
-    libsgp4::DateTime setEndTime(libsgp4::DateTime et);
+    bool setStartAndEndTime();
 
     void toString();
 

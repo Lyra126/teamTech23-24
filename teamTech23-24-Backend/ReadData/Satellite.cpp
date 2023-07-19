@@ -1,21 +1,17 @@
-//
-// Created by Clarissa Mac on 3/13/23.
-//
-
 #include <iostream>
 #include <vector>
 #include <fstream>
-#include <string>
-#include <math.h>
-#include <cmath>
-#include "Satellite.h"
 #include "libsgp4/SGP4.h"
+#include "Satellite.h"
 #include "libsgp4/Tle.h"
 #include "libsgp4/DateTime.h"
 #include "libsgp4/Observer.h"
 #include "libsgp4/Eci.h"
 #include "libsgp4/CoordTopocentric.h"
-
+#include <vector>
+#include <string>
+#include <math.h>
+#include <cmath>
 
 using namespace std;
 
@@ -73,8 +69,8 @@ void Satellite::assignRank() {
         rank = 2;
     } else if((0.175 <= maxElevation)) {
         rank = 3;
-    } else {
-        rank = 3;
+    } else { // Angle of elevation is too low
+        rank = 0;
     }
 }
 
@@ -86,12 +82,16 @@ libsgp4::DateTime Satellite::getEndTime(){
     return endTime;
 }
 
-libsgp4::DateTime Satellite::setStartTime(libsgp4::DateTime st){
-    startTime = st;
-}
+bool Satellite::setStartAndEndTime(){
+    passNumber++;
 
-libsgp4::DateTime Satellite::setEndTime(libsgp4::DateTime et){
-    endTime = et;
+    if(passNumber < passes.size()){
+        startTime = passes.at(passNumber).first;
+        endTime = passes.at(passNumber).second;
+        toString();
+        return true;
+    }
+    return false;
 }
 
 
@@ -115,7 +115,7 @@ void Satellite::generatePasses(){
     libsgp4::DateTime now(dt);
 
 // Loop over the next 24 hours
-    const int numSteps = 24 * 60 * 60;
+    const int numSteps = 24 * 60 * 60 * 3;
     std::vector<libsgp4::DateTime> times(numSteps);
     std::vector<libsgp4::CoordTopocentric> positions(numSteps);
     for (unsigned long i = 0; i < numSteps; ++i) {
@@ -131,8 +131,8 @@ void Satellite::generatePasses(){
     // libsgp4::DateTime visibility periods
     libsgp4::DateTime visibleStart, visibleEnd;
     bool visible = false;
-    for (unsigned int i = 0; i < numSteps; ++i) {
-        if (positions[i].elevation > 0) {
+    for (unsigned int i = 0; i < numSteps; ++i) { // || visibleEnd.Minute() - visibleStart.Minute() < 16 || visibleEnd.Minute() - visibleStart.Minute() < -43
+        if (positions[i].elevation > 0 ) {
             if(maxElevation < positions[i].elevation){
                 maxElevation = positions[i].elevation;
             }
@@ -144,7 +144,9 @@ void Satellite::generatePasses(){
         } else {
             if (visible) {
                 std::pair access(visibleStart, visibleEnd);
-                passes.push_back(access);
+                if(visibleEnd.Minute() - visibleStart.Minute() > 1){
+                    passes.push_back(access);
+                }
                 std::cout << "Satellite visible from " << visibleStart << " to " << visibleEnd << "\n";
                 visible = false;
             }
@@ -153,13 +155,16 @@ void Satellite::generatePasses(){
 
     if (visible) {
         std::pair access(visibleStart, visibleEnd);
-        passes.push_back(access);
+        if(visibleEnd.Minute() - visibleStart.Minute() > 1){
+            passes.push_back(access);
+        }
         //std::cout << "Satellite visible from " << visibleStart << " to " << visibleEnd << "\n";
     }
 
     if(passes.size() > 0){
         startTime = passes.at(0).first;
         endTime = passes.at(0).second;
+        passNumber = 0;
     }
 
 }
@@ -190,4 +195,3 @@ bool Satellite::operator< (const Satellite& rSat) const{
     else
         return false;
 }
-
