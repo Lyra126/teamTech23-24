@@ -1,22 +1,92 @@
 [
 {
-  "directory": "/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/cmake-build-debug",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o CMakeFiles/TestSGP4.dir/main.cpp.o -c /Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/main.cpp",
-  "file": "/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/main.cpp"
+  "directory": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -std=c++17 -o CMakeFiles/TestSGP4.dir/sgp4-master/libsgp4/CoordGeodetic.cc.o -c /Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/CoordGeodetic.cc",
+  "file": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/CoordGeodetic.cc"
 },
 {
-  "directory": "/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/cmake-build-debug",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o CMakeFiles/TestSGP4.dir/sgp4-master/libsgp4/Tle.cc.o -c /Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/sgp4-master/libsgp4/Tle.cc",
-  "file": "/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/sgp4-master/libsgp4/Tle.cc"
+  "directory": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -std=c++17 -o CMakeFiles/TestSGP4.dir/sgp4-master/libsgp4/CoordTopocentric.cc.o -c /Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/CoordTopocentric.cc",
+  "file": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/CoordTopocentric.cc"
 },
 {
-  "directory": "/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/cmake-build-debug",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o CMakeFiles/TestSGP4.dir/sgp4-master/libsgp4/TimeSpan.cc.o -c /Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/sgp4-master/libsgp4/TimeSpan.cc",
-  "file": "/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/sgp4-master/libsgp4/TimeSpan.cc"
+  "directory": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -std=c++17 -o CMakeFiles/TestSGP4.dir/sgp4-master/libsgp4/DateTime.cc.o -c /Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/DateTime.cc",
+  "file": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/DateTime.cc"
 },
 {
-  "directory": "/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/cmake-build-debug",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -std=c++17 -o CMakeFiles/TestSGP4.dir/Satellite.cpp.o -c /Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/Satellite.cpp",
-  "file": "/Users/rebeccadiaz/Desktop/teamTech22-23/backend/src/Satellite.cpp"
+  "directory": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -std=c++17 -o CMakeFiles/TestSGP4.dir/sgp4-master/libsgp4/DecayedException.cc.o -c /Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/DecayedException.cc",
+  "file": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/DecayedException.cc"
+},
+{
+  "directory": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -std=c++17 -o CMakeFiles/TestSGP4.dir/sgp4-master/libsgp4/Globals.cc.o -c /Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/Globals.cc",
+  "file": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/Globals.cc"
+},
+{
+  "directory": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -std=c++17 -o CMakeFiles/TestSGP4.dir/sgp4-master/libsgp4/OrbitalElements.cc.o -c /Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/OrbitalElements.cc",
+  "file": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/OrbitalElements.cc"
+},
+{
+  "directory": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -std=c++17 -o CMakeFiles/TestSGP4.dir/sgp4-master/libsgp4/Tle.cc.o -c /Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/Tle.cc",
+  "file": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/Tle.cc"
+},
+{
+  "directory": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -std=c++17 -o CMakeFiles/TestSGP4.dir/sgp4-master/libsgp4/TleException.cc.o -c /Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/TleException.cc",
+  "file": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/TleException.cc"
+},
+{
+  "directory": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -std=c++17 -o CMakeFiles/TestSGP4.dir/sgp4-master/libsgp4/Observer.cc.o -c /Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/Observer.cc",
+  "file": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/Observer.cc"
+},
+{
+  "directory": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -std=c++17 -o CMakeFiles/TestSGP4.dir/sgp4-master/libsgp4/SatelliteException.cc.o -c /Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/SatelliteException.cc",
+  "file": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/SatelliteException.cc"
+},
+{
+  "directory": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -std=c++17 -o CMakeFiles/TestSGP4.dir/sgp4-master/libsgp4/SolarPosition.cc.o -c /Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/SolarPosition.cc",
+  "file": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/SolarPosition.cc"
+},
+{
+  "directory": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -std=c++17 -o CMakeFiles/TestSGP4.dir/sgp4-master/libsgp4/Util.cc.o -c /Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/Util.cc",
+  "file": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/Util.cc"
+},
+{
+  "directory": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -std=c++17 -o CMakeFiles/TestSGP4.dir/sgp4-master/libsgp4/TimeSpan.cc.o -c /Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/TimeSpan.cc",
+  "file": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/TimeSpan.cc"
+},
+{
+  "directory": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -std=c++17 -o CMakeFiles/TestSGP4.dir/sgp4-master/libsgp4/SGP4.cc.o -c /Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/SGP4.cc",
+  "file": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/SGP4.cc"
+},
+{
+  "directory": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -std=c++17 -o CMakeFiles/TestSGP4.dir/sgp4-master/libsgp4/Eci.cc.o -c /Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/Eci.cc",
+  "file": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/Eci.cc"
+},
+{
+  "directory": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -std=c++17 -o CMakeFiles/TestSGP4.dir/sgp4-master/libsgp4/Vector.cc.o -c /Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/Vector.cc",
+  "file": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master/libsgp4/Vector.cc"
+},
+{
+  "directory": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -std=c++17 -o CMakeFiles/TestSGP4.dir/Satellite.cpp.o -c /Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/Satellite.cpp",
+  "file": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/Satellite.cpp"
+},
+{
+  "directory": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -std=c++17 -o CMakeFiles/TestSGP4.dir/schedule.cpp.o -c /Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/schedule.cpp",
+  "file": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/schedule.cpp"
 }
 ]

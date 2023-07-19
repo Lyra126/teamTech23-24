@@ -12,17 +12,5 @@
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Configuring done
-CMake Error at CMakeLists.txt:55 (add_executable):
-  Cannot find source file:
-
-    sgp4-master/Satellite.h
-
-  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
-  .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
-
-
-CMake Error at CMakeLists.txt:55 (add_executable):
-  No SOURCES given to target: TestSGP4
-
-
-CMake Generate step failed.  Build files cannot be regenerated correctly.
+-- Generating done
+-- Build files have been written to: /Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug

@@ -1,14 +1,10 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
-#include "libsgp4/SGP4.h"
 #include "Satellite.h"
 #include "libsgp4/Tle.h"
 #include "libsgp4/DateTime.h"
-#include <vector>
-#include <string>
 #include <queue>
-#include <functional>
 
 
 
@@ -39,10 +35,10 @@ int main() {
 
     // DEFAULT DATE TIME
     // needs to be military udt time
-    libsgp4::DateTime currentTime(libsgp4::DateTime::Now());
+    libsgp4::DateTime currentTime = libsgp4::DateTime::Now();
 
     // Initialize variables for reading input file
-    int numRanks = 3; //!!!change later!!!
+    //int numRanks = 3; //!!!change later!!!
     std::string buffer;
     //updated March 31,2022 1:48 pm est
     std::fstream input("celestrakList.txt"); // The file of satellites is found in the debug folder
@@ -67,9 +63,8 @@ int main() {
         //read TLE lines
         getline(input, line1);
         getline(input, line2);
-
-        line1.pop_back(); // Gets rid of carriage return character
-        line2.pop_back(); // Gets rid of carriage return character
+        //line1.pop_back(); // Gets rid of carriage return character
+        //line2.pop_back(); // Gets rid of carriage return character
         //create a TLE object with line 1 and line 2 as arguments
         libsgp4::Tle tle(line1, line2);
         //create a satellite object with the tle as an argument
@@ -96,18 +91,13 @@ int main() {
                 heaps[1].push(satellite);
             else if(satellite.getRank() == 3)
                 heaps[2].push(satellite);
-
         }
-
     }
-
 
     createSchedule(schedule, heaps);
 
-
     // Create json file
     std::ofstream file("satelliteSchedule.json");
-
 
     for(int i = 0; i < schedule.size() - 1; i++){
         file << "{ \"name\":\"" << schedule.at(i).getName() << "\" , ";
@@ -118,13 +108,10 @@ int main() {
     file << "\"startTime\":\"" << schedule.at(schedule.size()-1).getStartString() << "\" , ";
     file << "\"endTime\":\"" << schedule.at(schedule.size()-1).getEndString() << "\" }" << endl;
 
-
-
     return 0;
 }
 
 void createSchedule(vector<Satellite>& schedule, vector<priority_queue<Satellite>>& heaps){
-
     schedule.push_back(heaps[0].top());
     heaps[0].pop();
 
@@ -142,19 +129,15 @@ void createSchedule(vector<Satellite>& schedule, vector<priority_queue<Satellite
 
             // Find position in schedule
             while (index < schedule.size()) {
-                if (sat.getStartTime() <= schedule[index].getStartTime() ) {
+                if (sat.getStartTime() <= schedule[index].getStartTime() )
                     break;
-
-                } else {
+                else
                     index++;
-                }
-
             }
 
             // Check for conflicts
-            if(sat.getStartTime() == schedule[index].getStartTime() ){
+            if(sat.getStartTime() == schedule[index].getStartTime() )
                 continue;
-            }
             auto it = schedule.begin() + index;
             if (index == 0) {
                 if (sat.getEndTime() < schedule[index].getStartTime()) {
@@ -171,13 +154,7 @@ void createSchedule(vector<Satellite>& schedule, vector<priority_queue<Satellite
                     schedule.insert(it, sat);
                 }
             }
-
         }
     }
 }
 
-
-//to create a metric of the schedule’s effectiveness, would be useful to have count of number of satellites in the schedule
-int numSatellites(vector<Satellite> satellites){
-    return satellites.size();
-}

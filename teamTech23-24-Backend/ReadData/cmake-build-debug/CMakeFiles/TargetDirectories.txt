@@ -1,0 +1,3 @@
+/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug/CMakeFiles/TestSGP4.dir
+/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug/CMakeFiles/rebuild_cache.dir
