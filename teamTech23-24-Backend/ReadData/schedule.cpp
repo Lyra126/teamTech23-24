@@ -6,8 +6,6 @@
 #include "libsgp4/DateTime.h"
 #include <queue>
 
-
-
 void createSchedule(vector<Satellite>& schedule, vector<priority_queue<Satellite>>& heaps);
 
 // returns vector of min heap priority queues and takes in 1 satellite object,
@@ -41,7 +39,7 @@ int main() {
     //int numRanks = 3; //!!!change later!!!
     std::string buffer;
     //updated March 31,2022 1:48 pm est
-    std::fstream input("celestrakList.txt"); // The file of satellites is found in the debug folder
+    std::fstream input("/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/celestrakList.txt"); // The file of satellites is found in the debug folder
     string line1, line2;
 
     //Initialize variables for scheduler
@@ -99,14 +97,15 @@ int main() {
     // Create json file
     std::ofstream file("satelliteSchedule.json");
 
-    for(int i = 0; i < schedule.size() - 1; i++){
+    for(int i = 0; i < schedule.size(); i++){
         file << "{ \"name\":\"" << schedule.at(i).getName() << "\" , ";
         file << "\"startTime\":\"" << schedule.at(i).getStartString() << "\" , ";
-        file << "\"endTime\":\"" << schedule.at(i).getEndString() << "\" }" << endl;
+        file << "\"endTime\":\"" << schedule.at(i).getEndString() << "\" , ";
+        file << "\"startLat\":\"" << schedule.at(i).getStartTimeLatitude() << "\" , ";
+        file << "\"startLong\":\"" << schedule.at(i).getStartTimeLongitude() << "\" , ";
+        file << "\"endLat\":\"" << schedule.at(i).getEndTimeLatitude() << "\" , ";
+        file << "\"endLong\":\"" << schedule.at(i).getEndTimeLongitude() << "\" }" << endl;
     }
-    file << "{ \"name\":\"" << schedule.at(schedule.size()-1).getName() << "\" , ";
-    file << "\"startTime\":\"" << schedule.at(schedule.size()-1).getStartString() << "\" , ";
-    file << "\"endTime\":\"" << schedule.at(schedule.size()-1).getEndString() << "\" }" << endl;
 
     return 0;
 }
@@ -157,4 +156,3 @@ void createSchedule(vector<Satellite>& schedule, vector<priority_queue<Satellite
         }
     }
 }
-
