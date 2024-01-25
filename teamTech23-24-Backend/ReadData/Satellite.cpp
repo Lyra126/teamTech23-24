@@ -82,6 +82,26 @@ libsgp4::DateTime Satellite::getEndTime(){
     return endTime;
 }
 
+float Satellite::getStartTimeLatitude(){
+    //find the geoodetic coordinates of the satellite at the start time of the pass
+    return  libsgp4::Util::RadiansToDegrees(sgp4.FindPosition(startTime).ToGeodetic().latitude);
+}
+
+float Satellite::getStartTimeLongitude(){
+    //find the geoodetic coordinates of the satellite at the start time of the pass
+    return libsgp4::Util::RadiansToDegrees(sgp4.FindPosition(startTime).ToGeodetic().longitude);
+}
+
+float Satellite::getEndTimeLatitude(){
+    //find the geoodetic coordinates of the satellite at the start time of the pass
+    return libsgp4::Util::RadiansToDegrees(sgp4.FindPosition(endTime).ToGeodetic().latitude);
+}
+
+float Satellite::getEndTimeLongitude(){
+    //find the geoodetic coordinates of the satellite at the start time of the pass
+    return libsgp4::Util::RadiansToDegrees(sgp4.FindPosition(endTime).ToGeodetic().longitude);
+}
+
 bool Satellite::setStartAndEndTime(){
     passNumber++;
 
