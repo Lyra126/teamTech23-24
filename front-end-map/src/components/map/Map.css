@@ -1,0 +1,7 @@
+.map {
+    width: 100%;
+    height: calc(vw);
+    background: #000000;
+    font-family: 'Mirza', serif;
+    margin-bottom: 5px;
+}

@@ -1,7 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar';
+import Map from './components/map/Map';
+// import Calendar from './components/pages/Calendar';
 // make sure to import the various pages needed
-// will need to import: import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 /* NOTES:
   - without using routers do this, add <Navbar/> inside of div
   - works as an entry point
@@ -11,28 +13,15 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       {/* the only thing in here should be Routes to the different pages */}
-      {/* eample of what to do
+      <p>hello</p>
       <Router>
         <Navbar/>
         <Routes>
-          <Route path="/wisceReact/" element={<Home/>}></Route>
-          <Route path="/wisceReact/projects" element={<Projects/>}></Route>
-          <Route path="/wisceReact/experience" element={<Experience/>}></Route>
-          <Route path="/wisceReact/displayProject/:id" element={<DisplayProject/>}></Route>
+          <Route/>
         </Routes>
-        <Footer/>
       </Router> 
-      */}
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          {/* Edit <code>src/App.js</code> and save to reload. */}
-          Team Tech front-end MAP in development
-        </p>
-        
-      </header>
     </div>
   );
 }

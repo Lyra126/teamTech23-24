@@ -1,0 +1,52 @@
+.navbar {
+    /*gives width, height and color*/
+    width: 100%;
+    height: calc(vw);
+    background: #EDC7CF;
+    font-family: 'Mirza', serif;
+    margin-bottom: 5px;
+}
+.links {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #040926;
+}
+
+.navbar a {
+    color: #040926;
+    text-decoration: none;
+    margin: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+  /* when screen is a certain size, it allows us to ensure that it scales properly and looks nice */
+  @media only screen and (min-width: 300px) {
+    .navbar a {
+      font-size: 25px;
+    }
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    .navbar a {
+        font-size: 35px;
+      }
+  }
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    .navbar a {
+        font-size: 40px;
+      }
+  }
+  
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    .navbar a {
+        font-size: 40px;
+      }
+  }
