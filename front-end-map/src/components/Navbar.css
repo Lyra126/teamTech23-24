@@ -2,7 +2,7 @@
     /*gives width, height and color*/
     width: 100%;
     height: calc(vw);
-    background: #EDC7CF;
+    background: #fff6c4;
     font-family: 'Mirza', serif;
     margin-bottom: 5px;
 }
@@ -12,14 +12,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #040926;
+    color: #27004b;
 }
 
 .navbar a {
-    color: #040926;
+    color: #27004b;
     text-decoration: none;
-    margin: 20px;
-    font-size: 30px;
+    margin: 15px;
+    font-size: 20px;
     font-weight: bold;
 }
 

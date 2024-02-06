@@ -1,6 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import Map from './components/map/Map';
+import Home from './components/pages/Home';
 // import Calendar from './components/pages/Calendar';
 // make sure to import the various pages needed
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -15,11 +16,12 @@ function App() {
   return (
     <div>
       {/* the only thing in here should be Routes to the different pages */}
-      <p>hello</p>
       <Router>
         <Navbar/>
         <Routes>
-          <Route/>
+          {/* adding routes to pages */}
+          <Route path="/front-end-map/" element={<Map/>}></Route>
+          <Route path="/front-end-map/" element={<Home/>}></Route>
         </Routes>
       </Router> 
     </div>

@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <div className = "navbar">
         <div className = "links"> 
-            {/* <Link to="/front-end-map/">Home</Link> */}
+            <Link to="/front-end-map/">Home</Link>
             <Link to="/front-end-map/map">Map</Link>
             {/* <Link to="/front-end-app/calendar">Calendar</Link> */}
         </div>

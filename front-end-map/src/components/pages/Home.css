@@ -1,0 +1,13 @@
+.home {
+    width: 100%;
+    align-items: center;
+    color: #040926;
+}
+
+.home p {
+    color: #27004b;
+    text-decoration: none;
+    margin: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
