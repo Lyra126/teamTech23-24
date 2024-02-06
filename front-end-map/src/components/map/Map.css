@@ -1,10 +1,17 @@
-/* .map {
+.map {
+    /* mess around with padding and margin later to make room for search bar */
     width: 100%;
     height: calc(vw);
-    background: #000000;
+    background: #9d84ac;
     font-family: 'Mirza', serif;
+    margin-top: 20px;
     margin-bottom: 5px;
-} */
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 body {
     margin: 0;
