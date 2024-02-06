@@ -1,10 +1,11 @@
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Map from './components/map/Map';
 import Home from './components/pages/Home';
 // import Calendar from './components/pages/Calendar';
 // make sure to import the various pages needed
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 /* NOTES:
   - without using routers do this, add <Navbar/> inside of div
   - works as an entry point
@@ -20,7 +21,7 @@ function App() {
         <Navbar/>
         <Routes>
           {/* adding routes to pages */}
-          <Route path="/front-end-map/" element={<Map/>}></Route>
+          <Route path="/front-end-map/map" element={<Map/>}></Route>
           <Route path="/front-end-map/" element={<Home/>}></Route>
         </Routes>
       </Router> 

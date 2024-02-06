@@ -4,10 +4,26 @@
     color: #040926;
 }
 
-.home p {
-    color: #27004b;
-    text-decoration: none;
-    margin: 20px;
-    font-size: 20px;
-    font-weight: bold;
-}
+.about {
+    width: 100%;
+    height: calc(30px + 40vw);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #5e276f;
+    color: #d1c0e5;
+  }
+   
+  .about h2 {
+    font-family: 'Miriam Libre', sans-serif;
+    font-size: 80px;
+    color: #ede9c7;
+    height: 30px;
+  }
+    
+  .about .prompt {
+    width: 40%;
+    font-size: 30px;
+  }
