@@ -4,13 +4,15 @@
 
 // Please make sure to write comments as you go to help with future reference
 import React from 'react'
-import { Map } from './Map'
+import Map from './Map'
+import SearchBar from './searchBar'
 
 const MapPage = () => {
   return (
-    <div>MapPage
-      {Map}
-    </div>
+    <div>
+      <SearchBar/>
+      <Map/>
+    </div>    
   )
 }
 

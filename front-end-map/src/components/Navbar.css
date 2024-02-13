@@ -2,7 +2,7 @@
     /*gives width, height and color*/
     width: 100%;
     height: calc(vw);
-    background: #fff6c4;
+    background: #e4cdcd;
     font-family: 'Mirza', serif;
     margin-bottom: 5px;
 }
@@ -18,7 +18,7 @@
 .navbar a {
     color: #27004b;
     text-decoration: none;
-    margin: 15px;
+    margin: 10px;
     font-size: 20px;
     font-weight: bold;
 }

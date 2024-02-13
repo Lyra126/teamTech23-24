@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Map from './components/map/Map';
+import Map from './components/map/MapPage';
 import Home from './components/pages/Home';
 // import Calendar from './components/pages/Calendar';
 // make sure to import the various pages needed

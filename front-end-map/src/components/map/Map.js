@@ -20,7 +20,7 @@ const Map = () => {
   return (
     <div className='map'>
       {/* // Make sure you set the height and width of the map container otherwise the map won't show */}
-      <MapContainer center={[latitude, longitude]} zoom={13} ref={mapRef} style={{height: "80vh", width: "90vw"}}>
+      <MapContainer center={[latitude, longitude]} zoom={2} ref={mapRef} style={{height: "80vh", width: "60vw"}}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -44,7 +44,12 @@ const Map = () => {
     //         <map/>
     //       </div>
     // </div>
+
+    
   )
+
+
+
 }
 
 export default Map
