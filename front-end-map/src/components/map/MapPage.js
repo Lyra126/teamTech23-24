@@ -6,6 +6,8 @@
 import React from 'react'
 import Map from './Map'
 import SearchBar from './searchBar'
+// import DateFilter from './DateFilter'
+
 
 const MapPage = () => {
   return (

@@ -4,10 +4,13 @@
 // Please make sure to write comments as you go to help with future reference
 import React, {useRef} from 'react'
 // importing leaflet
-import { MapContainer, TileLayer } from "react-leaflet";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 // importing css styling
 import './Map.css'
+// importing Icon to show satellite icon
+import { Icon } from "leaflet";
+import image from "../images/satellite_icon.png"
 
 // here's the website I referenced to do this: 
 // https://medium.com/@timndichu/getting-started-with-leaflet-js-and-react-rendering-a-simple-map-ef9ee0498202
@@ -17,15 +20,27 @@ const Map = () => {
   const mapRef = useRef(null);
   const latitude = 51.505;
   const longitude = -0.09;
+  // icon
+  const satIcon = new Icon({
+    iconUrl: image,
+    // Satellite icon created by Freepik - Flaticon at https://www.flaticon.com/free-icon/satellite_1072372?term=satellite&page=1&position=2&origin=search&related_id=1072372
+    iconSize: [25, 25]
+  });
   return (
     <div className='map'>
       {/* // Make sure you set the height and width of the map container otherwise the map won't show */}
-      <MapContainer center={[latitude, longitude]} zoom={2} ref={mapRef} style={{height: "80vh", width: "60vw"}}>
+      <MapContainer center={[latitude, longitude]} zoom={4} ref={mapRef} style={{height: "80vh", width: "60vw"}}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       {/* Additional map layers or components can be added here */}
+      {/* Add one test point at center of map, can edit to add satellite point with lat and lon from dataset */}
+      <Marker 
+        position={[latitude, longitude]}
+        icon = {satIcon} // Add icon for satellite
+      />
+
       </MapContainer>
     </div>
  

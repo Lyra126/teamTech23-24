@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: flex-start; /* aligns to the left*/
     margin: 20px;
+    margin-right: 10px;
   }
   
   .SearchBar input {
@@ -17,4 +18,10 @@
   
   .SearchBar li {
     margin-bottom: 5px;
+  }
+
+  .datepick {
+    /* flex-direction: column; */ /* aligns to the left*/
+    margin: 20px;
+    position: relative;
   }
