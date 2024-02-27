@@ -4,10 +4,12 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './SearchBar.css';
 
-const SearchBar = () => {
+const SearchBar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [results, setResults] = useState([]);
   const [searchBarPosition, setSearchBarPosition] = useState({ top: 0, left: 0 });
+  // selectedResult keeps track of our search result to be passed to the map
+  const [selectedResult, setSelectedResult] = useState(null);
 
   const searchBarRef = useRef(null);
 
@@ -15,23 +17,34 @@ const SearchBar = () => {
     setSearchTerm(e.target.value);
   };
 
-    // Perform search logic here based on searchTerm
-    // For example, you can filter an array of data
-    // Replace this logic with your actual data fetching or filtering logic
-    
-    // fetchData is searching through said data to figure out if input was valid
-    const fetchData = async () => {
-      const filteredData = dummySatellites.filter(item =>
-        item.name.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-      setResults(filteredData);
+  const handleResultSelect = (result) => {
+    console.log('Selected Result:', result); // Log the selected result
+    setSelectedResult(result);
+    setSearchTerm(result.name); // Set the search term to the selected result name
+    setResults([]); // Clear the results
 
-    };
+    // Call the onSearch prop with the selected result
+    onSearch(result);
+  };
 
-    // Call fetchData when searchTerm changes
-    useEffect (() => {
-      fetchData();
-      // Get the position of the search bar
+  // Perform search logic here based on searchTerm
+  // For example, you can filter an array of data
+  // Replace this logic with your actual data fetching or filtering logic
+  
+  // fetchData is searching through said data to figure out if input was valid
+  const fetchData = async () => {
+    const filteredData = dummySatellites.filter(item =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setResults(filteredData);
+
+  };
+
+  // Call fetchData when searchTerm changes
+  useEffect (() => {
+    console.log('Search Term:', searchTerm); // Log the current search term
+    fetchData();
+    // Get the position of the search bar
     if (searchBarRef.current) {
       const rect = searchBarRef.current.getBoundingClientRect();
       setSearchBarPosition({
@@ -39,10 +52,15 @@ const SearchBar = () => {
         left: rect.left + window.scrollX,
       });
     }
-    }, [searchTerm]);
+  }, [searchTerm]);
 
-    // date picker code
-    const [startDate, setStartDate] = useState(new Date());
+  // date picker code
+  const [startDate, setStartDate] = useState(new Date());
+
+  // Pass the selected result to the parent component when it changes
+  useEffect(() => {
+    onSearch(selectedResult);
+  }, [selectedResult, onSearch]);
 
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -56,7 +74,7 @@ const SearchBar = () => {
         {searchTerm > 0  && (<div className="result-overlay" style={{
           // styling the auto filter of the search bar
             position: 'absolute',
-            top: searchBarPosition.top + searchBarRef.current?.offsetHeight + 'px',
+            top: 200 + 'px',
             left: searchBarPosition.left + 'px',
             width: '30%',
             backgroundColor: 'white',
@@ -67,7 +85,9 @@ const SearchBar = () => {
             zIndex: '1',}}>
           <ul>
             {results.map(result => (
-              <li key={result.id}>{result.name}</li>
+              <li key={result.id} onClick={() => handleResultSelect(result)}>
+                {result.name}
+              </li>
             ))}
           </ul>
         </div>)}  

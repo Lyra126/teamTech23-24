@@ -2,7 +2,7 @@
 // Map Team - work on map here!
 
 // Please make sure to write comments as you go to help with future reference
-import React, {useRef} from 'react'
+import React, {useRef, useEffect} from 'react'
 // importing leaflet
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
@@ -10,61 +10,113 @@ import "leaflet/dist/leaflet.css";
 import './Map.css'
 // importing Icon to show satellite icon
 import { Icon } from "leaflet";
-import image from "../images/satellite_icon.png"
+import image1 from "../images/greensatellite.png"
+import image2 from "../images/orangesatellite.png"
+import image3 from "../images/yellowsatellite.png"
+
 
 // here's the website I referenced to do this: 
 // https://medium.com/@timndichu/getting-started-with-leaflet-js-and-react-rendering-a-simple-map-ef9ee0498202
 // great guide for using the react-leaflet: https://react-leaflet.js.org/docs/example-popup-marker/
 
-const Map = () => {
+// Updating Map based on Search Results
+const Map = ({ objectData }) => {
+  useEffect(() => {
+    // Update the map when objectData changes
+    updateMap();
+  }, [objectData]);
+
+  const updateMap = () => {
+    if (objectData) {
+      // Assuming your objectData has 'startlat' and 'startlong' properties
+      const { startlat, startlong } = objectData;
+
+      // Use 'startlat' and 'startlong' to set the initial coordinates
+      // For simplicity, let's assume a function setInitialCoordinates() updates the coordinates
+      setInitialCoordinates(startlat, startlong);
+    }
+  };
+
+  // const updateMarker = (latitude, longitude) => {
+  //   // Implement the logic to update the marker on the map
+  //   // For simplicity, let's assume there is a marker state or a function to set markers
+  //   <Marker 
+  //       position={[latitude, longitude]}
+  //       icon = {satIcon} // Add icon for satellite
+  //     />
+  // };
+  const setInitialCoordinates = (latitude, longitude) => {
+    // Implement the logic to set the initial coordinates on the map
+    // For simplicity, let's assume there's a function to set the map center
+    setMapCenter([latitude, longitude]);
+  };
+
+  const initialLatitude = 40.7128;
+  const initialLongitude = -74.0060;
+  const [mapCenter, setMapCenter] = React.useState([initialLatitude, initialLongitude]);
+
+
   const mapRef = useRef(null);
-  const latitude = 51.505;
-  const longitude = -0.09;
+  // const latitude = 51.505;
+  // const longitude = -0.09;
+  
   // icon
-  const satIcon = new Icon({
-    iconUrl: image,
+  const greensatIcon = new Icon({
+    iconUrl: image1,
     // Satellite icon created by Freepik - Flaticon at https://www.flaticon.com/free-icon/satellite_1072372?term=satellite&page=1&position=2&origin=search&related_id=1072372
     iconSize: [25, 25]
   });
+
+  const orangesatIcon = new Icon({
+    iconUrl: image2,
+    // Satellite icon created by Freepik - Flaticon at https://www.flaticon.com/free-icon/satellite_1072372?term=satellite&page=1&position=2&origin=search&related_id=1072372
+    iconSize: [25, 25]
+  });
+
+  const yellowsatIcon = new Icon({
+    iconUrl: image3,
+    // Satellite icon created by Freepik - Flaticon at https://www.flaticon.com/free-icon/satellite_1072372?term=satellite&page=1&position=2&origin=search&related_id=1072372
+    iconSize: [25, 25]
+  });
+
+  // const satIcon = new Icon({
+  //   iconUrl: image3,
+  //   // Satellite icon created by Freepik - Flaticon at https://www.flaticon.com/free-icon/satellite_1072372?term=satellite&page=1&position=2&origin=search&related_id=1072372
+  //   iconSize: [25, 25]
+  // });
+
+
+  
   return (
     <div className='map'>
       {/* // Make sure you set the height and width of the map container otherwise the map won't show */}
-      <MapContainer center={[latitude, longitude]} zoom={4} ref={mapRef} style={{height: "80vh", width: "60vw"}}>
+      <MapContainer center={mapCenter} zoom={4} ref={mapRef} style={{height: "80vh", width: "60vw"}}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       {/* Additional map layers or components can be added here */}
       {/* Add one test point at center of map, can edit to add satellite point with lat and lon from dataset */}
-      <Marker 
+      {/* <Marker 
         position={[latitude, longitude]}
         icon = {satIcon} // Add icon for satellite
+      /> */}
+      <Marker // Marker for Sarasota
+        position={[27.2256, -82.2608]} 
+        icon = {greensatIcon}
+      />
+      <Marker // Marker for Austin
+        position={[30.26666, -97.73830]}
+        icon = {orangesatIcon}
+      />
+      <Marker // Marker for Tokyo
+        position={[35.652832, 139.839478]} // FIXTHIS only showing on half of map rn 
+        icon = {yellowsatIcon}
       />
 
       </MapContainer>
-    </div>
- 
-  // can delete this code below
-    // Include Leaflet CSS and JavaScript file -> this is using hmtl
-    // <div>
-    //   {/* <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    //       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    //       crossorigin=""/>
-
-    //   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    //       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    //       crossorigin=""></script> */}
-    //       {/* the container where the map will be loaded */}
-    //       <div id="map">
-    //         <map/>
-    //       </div>
-    // </div>
-
-    
+    </div>   
   )
-
-
-
 }
 
 export default Map
