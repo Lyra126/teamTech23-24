@@ -5,9 +5,8 @@
 // Please make sure to write comments as you go to help with future reference
 import React, { useState } from 'react'
 import Map from './Map'
-import SearchBar from './searchBar'
+// import SearchBar from './searchBar'
 // import DateFilter from './DateFilter'
-
 
 const MapPage = () => {
 
@@ -21,7 +20,7 @@ const MapPage = () => {
 
   return (
     <div>
-      <SearchBar onSearch={handleSearch}/>
+      {/* <SearchBar onSearch={handleSearch}/> */}
       <Map />
     </div>    
   )

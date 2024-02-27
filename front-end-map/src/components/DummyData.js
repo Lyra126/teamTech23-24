@@ -1,3 +1,5 @@
+import { React, useState } from 'react'
+
 const dummySatellites = [
     // satellite dummy data (we will ignore start and end time for the time being, will get more up-to-date times later)
     { name:"28372" , startTime:"2024-01-25 23:21:58.000000 UTC" , endTime:"2024-01-25 23:31:41.000000 UTC" , startLat:"41.0123" , startLong:"76.6953" , endLat:"6.3392" , endLong:"67.7264" },
@@ -224,4 +226,23 @@ const dummySatellites = [
     { name:"28470" , startTime:"2024-01-28 23:07:21.000000 UTC" , endTime:"2024-01-28 23:17:26.000000 UTC" , startLat:"12.9342" , startLong:"98.6062" , endLat:"50.9141" , endLong:"88.8396" }
 ];
 
-export default dummySatellites;
+function List(props) {
+    const filterData = dummySatellites.filter((el) => {
+        if(props.input === '') {
+            // original list
+            return el;
+        } else {
+            // includes checks if the name of said element contains whatever props.input is
+            return el.name.includes(props.input);
+        }
+    })
+    return (
+        <ul>
+            {filterData.map((item) => (
+                <li key={item.name}>{item.startLat}, {item.startLong}</li>
+            ))}
+        </ul>
+    )
+}
+
+export default List

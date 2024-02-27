@@ -85,7 +85,7 @@ const SearchBar = ({ onSearch }) => {
             zIndex: '1',}}>
           <ul>
             {results.map(result => (
-              <li key={result.id} onClick={() => handleResultSelect(result)}>
+              <li key={result.name} onClick={() => handleResultSelect(result)}>
                 {result.name}
               </li>
             ))}
