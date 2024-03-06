@@ -62,30 +62,6 @@ const SearchBar = ({ onSearch }) => {
     onSearch(selectedResult);
   }, [selectedResult, onSearch]);
 
-  // const [selectedDate, setSelectedDate] = useState(new Date());
-
-  // // Function to handle date change
-  // const handleDateChange = (date) => {
-  //   setSelectedDate(date); // Update the selected date state
-  //   // You can store the selected date in a separate variable here if needed
-  // };
-
-// export default function StoringDate() {
-//     const [startDate, setStartDate] = useState(new Date());
-  
-//     return (
-//       <div>
-        
-//         <div className='datepick'>
-//           <DatePicker
-//             selected={startDate}
-//             onChange={(date) => setStartDate(date)} 
-//           />
-//         </div>
-//       </div>
-//     );
-//   }
-
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
       <div className='SearchBar'> 
@@ -98,15 +74,15 @@ const SearchBar = ({ onSearch }) => {
         {searchTerm > 0  && (<div className="result-overlay" style={{
           // styling the auto filter of the search bar
             position: 'absolute',
-            top: 200 + 'px',
-            left: searchBarPosition.left + 'px',
+            top: '150px',
+            left: '10px',
             width: '30%',
             backgroundColor: 'white',
             border: '1px solid #ccc',
             boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
             maxHeight: '200px',
             overflowY: 'auto',
-            zIndex: '1',}}>
+            zIndex: '2000',}}>
           <ul>
             {results.map(result => (
               <li key={result.name} onClick={() => handleResultSelect(result)}>
@@ -120,7 +96,10 @@ const SearchBar = ({ onSearch }) => {
       <div className='datepick'>
         <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
         {/* <p>{startDate}</p> */}
+        
       </div>   
+      {searchTerm} <br/>
+      {startDate.getMonth()+1} / {startDate.getDate()} / {startDate.getFullYear()}
     </div>
     
   );
