@@ -62,6 +62,30 @@ const SearchBar = ({ onSearch }) => {
     onSearch(selectedResult);
   }, [selectedResult, onSearch]);
 
+  // const [selectedDate, setSelectedDate] = useState(new Date());
+
+  // // Function to handle date change
+  // const handleDateChange = (date) => {
+  //   setSelectedDate(date); // Update the selected date state
+  //   // You can store the selected date in a separate variable here if needed
+  // };
+
+// export default function StoringDate() {
+//     const [startDate, setStartDate] = useState(new Date());
+  
+//     return (
+//       <div>
+        
+//         <div className='datepick'>
+//           <DatePicker
+//             selected={startDate}
+//             onChange={(date) => setStartDate(date)} 
+//           />
+//         </div>
+//       </div>
+//     );
+//   }
+
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
       <div className='SearchBar'> 
@@ -95,6 +119,7 @@ const SearchBar = ({ onSearch }) => {
       {/* DATE FILTER OPTION */}
       <div className='datepick'>
         <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+        {/* <p>{startDate}</p> */}
       </div>   
     </div>
     

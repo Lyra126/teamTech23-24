@@ -23,5 +23,6 @@
   .datepick {
     /* flex-direction: column; */ /* aligns to the left*/
     margin: 20px;
-    position: relative;
+    position: absolute;
+    left: 200px;
   }

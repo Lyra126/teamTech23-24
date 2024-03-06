@@ -4,7 +4,7 @@
 // Please make sure to write comments as you go to help with future reference
 import React, {useRef, useEffect} from 'react'
 // importing leaflet
-import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Polyline } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 // importing css styling
 import './Map.css'
@@ -20,7 +20,7 @@ import image3 from "../images/yellowsatellite.png"
 // great guide for using the react-leaflet: https://react-leaflet.js.org/docs/example-popup-marker/
 
 // Updating Map based on Search Results
-const Map = ({ objectData }) => {
+/*const Map = ({ objectData }) => {
   useEffect(() => {
     // Update the map when objectData changes
     updateMap();
@@ -55,8 +55,18 @@ const Map = ({ objectData }) => {
   const initialLongitude = -74.0060;
   const [mapCenter, setMapCenter] = React.useState([initialLatitude, initialLongitude]);
 
+  */
 
-  const mapRef = useRef(null);
+  const Map = ({ objectData }) => {
+  const [mapCenter, setMapCenter] = React.useState([40.7128, -74.0060]); // Default center
+
+  useEffect(() => {
+    if (objectData) {
+      const { startlat, startlong } = objectData;
+      setMapCenter([startlat, startlong]);
+    }
+  }, [objectData]);
+
   // const latitude = 51.505;
   // const longitude = -0.09;
   
@@ -78,6 +88,42 @@ const Map = ({ objectData }) => {
     // Satellite icon created by Freepik - Flaticon at https://www.flaticon.com/free-icon/satellite_1072372?term=satellite&page=1&position=2&origin=search&related_id=1072372
     iconSize: [25, 25]
   });
+
+  const mapRef = useRef(null);
+
+  useEffect(() => {
+    let mapInstance = null;
+
+    if (mapRef.current) {
+      mapInstance = mapRef.current.leafletElement;
+      mapInstance.on("moveend", updateMarkers); // event fired when the map completes a move, triggering the action to update markers
+      updateMarkers();
+    }
+
+    return () => {
+      if (mapInstance) {
+        mapInstance.off("moveend", updateMarkers);
+      }
+    };
+  }, []);
+
+  const updateMarkers = () => {
+    if (mapRef.current){
+      const map = mapRef.current.leafletElement;
+
+      const bounds = map.getBounds();
+      const newMarkers = [
+        { position: [27.2256, -82.2608], icon: greensatIcon},
+        { position: [30.26666, -97.73830], icon: orangesatIcon },
+        { position: [35.652832, 139.839478], icon: yellowsatIcon }
+      ];
+      newMarkers.forEach(({ position, icon }) => {
+        if (bounds.contains(position)) {
+          new Marker(position, { icon }).addTo(map);
+        }
+      });
+    }
+  };
 
   // const satIcon = new Icon({
   //   iconUrl: image3,
@@ -113,6 +159,15 @@ const Map = ({ objectData }) => {
         position={[35.652832, 139.839478]} // FIXTHIS only showing on half of map rn 
         icon = {yellowsatIcon}
       />
+
+      <Polyline // Line connecting Sarasota and Austin
+        pathOptions={{color: 'blue'}}
+        positions={[
+          [27.2256, -82.2608], 
+          [30.26666, -97.73830],
+        ]}
+      />
+      
 
       </MapContainer>
     </div>   
