@@ -1,5 +1,3 @@
-import { React, useState } from 'react'
-
 const Satellites = [
     // satellite dummy data (we will ignore start and end time for the time being, will get more up-to-date times later)
     { name:"28372" , startTime:"2024-01-25 23:21:58.000000 UTC" , endTime:"2024-01-25 23:31:41.000000 UTC" , startLat:"41.0123" , startLong:"76.6953" , endLat:"6.3392" , endLong:"67.7264" },

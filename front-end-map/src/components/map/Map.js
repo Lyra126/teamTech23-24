@@ -2,7 +2,7 @@
 // Map Team - work on map here!
 
 // Please make sure to write comments as you go to help with future reference
-import React, {useRef, useEffect} from 'react'
+import React, {useRef, useEffect, useState} from 'react'
 // importing leaflet
 import { MapContainer, TileLayer, Marker, Polyline } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
@@ -13,50 +13,13 @@ import { Icon } from "leaflet";
 import image1 from "../images/greensatellite.png"
 import image2 from "../images/orangesatellite.png"
 import image3 from "../images/yellowsatellite.png"
+// Testing Search Bar Stuff
+// import SearchBar from './searchBar';
 
 
 // here's the website I referenced to do this: 
 // https://medium.com/@timndichu/getting-started-with-leaflet-js-and-react-rendering-a-simple-map-ef9ee0498202
 // great guide for using the react-leaflet: https://react-leaflet.js.org/docs/example-popup-marker/
-
-// Updating Map based on Search Results
-/*const Map = ({ objectData }) => {
-  useEffect(() => {
-    // Update the map when objectData changes
-    updateMap();
-  }, [objectData]);
-
-  const updateMap = () => {
-    if (objectData) {
-      // Assuming your objectData has 'startlat' and 'startlong' properties
-      const { startlat, startlong } = objectData;
-
-      // Use 'startlat' and 'startlong' to set the initial coordinates
-      // For simplicity, let's assume a function setInitialCoordinates() updates the coordinates
-      setInitialCoordinates(startlat, startlong);
-    }
-  };
-
-  // const updateMarker = (latitude, longitude) => {
-  //   // Implement the logic to update the marker on the map
-  //   // For simplicity, let's assume there is a marker state or a function to set markers
-  //   <Marker 
-  //       position={[latitude, longitude]}
-  //       icon = {satIcon} // Add icon for satellite
-  //     />
-  // };
-  const setInitialCoordinates = (latitude, longitude) => {
-    // Implement the logic to set the initial coordinates on the map
-    // For simplicity, let's assume there's a function to set the map center
-    setMapCenter([latitude, longitude]);
-  };
-
-  const initialLatitude = 40.7128;
-  const initialLongitude = -74.0060;
-  const [mapCenter, setMapCenter] = React.useState([initialLatitude, initialLongitude]);
-
-  */
-
   const Map = ({ objectData }) => {
   const [mapCenter, setMapCenter] = React.useState([40.7128, -74.0060]); // Default center
 
@@ -131,10 +94,19 @@ import image3 from "../images/yellowsatellite.png"
   //   iconSize: [25, 25]
   // });
 
+// add for satellite data to be passed to map
+const [data, setData] = useState(null);
 
+const handleSearch = (data) => {
+  // Update the objectData in the state
+  setData(data);
+};
   
   return (
-    <div className='map'>
+    <div>
+      {/* search bar adding to same page, testing it out */}
+      {/* <SearchBar onSearch={handleSearch}/> */}
+      <div className='map'>
       {/* // Make sure you set the height and width of the map container otherwise the map won't show */}
       <MapContainer center={mapCenter} zoom={4} ref={mapRef} style={{height: "80vh", width: "60vw"}}>
       <TileLayer
@@ -170,6 +142,7 @@ import image3 from "../images/yellowsatellite.png"
       
 
       </MapContainer>
+      </div>
     </div>   
   )
 }

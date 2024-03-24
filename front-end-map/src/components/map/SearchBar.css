@@ -21,8 +21,11 @@
   }
 
   .datepick {
-    /* flex-direction: column; */ /* aligns to the left*/
-    margin: 20px;
+    flex-direction: column; /* aligns to the left*/
+    margin-top: 30px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    margin-right: 20px;
     position: absolute;
     left: 200px;
     /* overflow: visible; */
