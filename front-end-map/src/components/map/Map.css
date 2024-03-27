@@ -1,16 +1,22 @@
+.overall {
+    width: auto;
+    min-height: 100vh;
+    height: auto;
+}
 .map {
     /* mess around with padding and margin later to make room for search bar */
-    width: 100vw;
-    height: calc(vw);
+    width: auto;
+    height: 90vh;
     background-color: #9d84ac;
     font-family: 'Mirza', serif;
     /* margin-top: 20px;
-    margin-bottom: 5px;
-    padding-left: 5px;
+    margin-bottom: 5px; */
+    margin: 10px;
+    /* padding-left: 5px;
     padding-right: 5px; */
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .body {
@@ -18,11 +24,11 @@
     padding: 0;
   }
   
-  .map {
-    /* position: absolute; */
+  /* .map {
+    position: absolute;
     width: 95vw;
     padding: 20px;
     justify-content: center;
     align-items: center;
     display: flex;
-  }
+  } */

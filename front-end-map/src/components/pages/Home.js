@@ -5,7 +5,7 @@ import SearchBar from '../map/TestSearch'
 const Home = () => {
   return (
     <div className='home'>
-      <SearchBar/>
+      {/* <SearchBar/> */}
       <div className='about'>
         <h2>Hello, this is Team Tech!</h2>
         <div className='prompt'>

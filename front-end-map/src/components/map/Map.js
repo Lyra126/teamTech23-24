@@ -173,7 +173,7 @@ const Map = () => {
   // });
 
   return (
-    <div>
+    <div className='overall'>
       {/* Search Bar */}
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <div className="SearchBar">
@@ -247,9 +247,9 @@ const Map = () => {
         {/* // Make sure you set the height and width of the map container otherwise the map won't show */}
         <MapContainer center={mapCenter} 
           zoom={2} 
-          style={{height: "80vh", width: "60vw"}}
+          style={{height: "80vh", width: "60vw", margin: "20px"}}
           worldCopyJump={true}
-          minZoom={1}
+          minZoom={2}
           maxZoom={10}
         >
           <TileLayer

@@ -1,6 +1,6 @@
 .navbar {
     /*gives width, height and color*/
-    width: 100vw;
+    width: auto;
     height: calc(vw);
     background: #e4cdcd;
     font-family: 'Mirza', serif;
