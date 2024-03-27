@@ -4,6 +4,7 @@
     align-items: flex-start; /* aligns to the left*/
     margin: 20px;
     margin-right: 10px;
+    width: 100vw;
   }
   
   .SearchBar input {
@@ -30,6 +31,12 @@
     left: 200px;
     /* overflow: visible; */
     z-index: 2000;
+  }
+
+  .SearchButton {
+    flex-direction: column;
+    position: absolute;
+    left: 600px;
   }
 
   .info {

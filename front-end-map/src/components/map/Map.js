@@ -223,22 +223,24 @@ const Map = () => {
             // minDate={new Date()}
           />        
         </div>
-        <div>
-          <Button variant="contained" 
+        <div className='SearchButton'>
+          <Button 
+            variant="contained" 
             style={{
               width: '80px', 
               top: '30px',  
-              textTransform: 'none'}}
-              onClick={handleKeyDown}
+              textTransform: 'none'
+            }}
+            onClick={handleKeyDown}
           >
             Search
           </Button>
         </div>
-        {startDate.toUTCString()}
+        {/* {startDate.toUTCString()}
         <br/>
         {searchResults.length}
         <br/>
-        {searchText}
+        {searchText} */}
       </div>
       {/* MAP STUFF */}
       <div className='map'>
