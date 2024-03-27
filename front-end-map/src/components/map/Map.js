@@ -47,11 +47,6 @@ const Map = () => {
     performSearch();
   };
   
-  // handles when new date is clicked
-  // const handleClick = () => {
-  //   performSearch();
-  // };
-
   // performs search through database to idenitify potential satellites of the same date or id
   const performSearch = () => {
     // setError('');
@@ -167,42 +162,6 @@ const Map = () => {
     iconSize: [25, 25]
   });
 
-  // const mapRef = useRef(null);
-
-  // useEffect(() => {
-  //   let mapInstance = null;
-
-  //   if (mapRef.current) {
-  //     mapInstance = mapRef.current.leafletElement;
-  //     mapInstance.on("moveend", updateMarkers); // event fired when the map completes a move, triggering the action to update markers
-  //     updateMarkers();
-  //   }
-
-  //   return () => {
-  //     if (mapInstance) {
-  //       mapInstance.off("moveend", updateMarkers);
-  //     }
-  //   };
-  // }, []);
-
-  // const updateMarkers = () => {
-  //   if (mapRef.current){
-  //     const map = mapRef.current.leafletElement;
-
-  //     const bounds = map.getBounds();
-  //     const newMarkers = [
-  //       { position: [27.2256, -82.2608], icon: greensatIcon},
-  //       { position: [30.26666, -97.73830], icon: orangesatIcon },
-  //       { position: [35.652832, 139.839478], icon: yellowsatIcon }
-  //     ];
-  //     newMarkers.forEach(({ position, icon }) => {
-  //       if (bounds.contains(position)) {
-  //         new Marker(position, { icon }).addTo(map);
-  //       }
-  //     });
-  //   }
-  // };
-
   useEffect(() => {
     setMapCenter(0.0, satellite.startLong);
   }, [satellite])
@@ -212,10 +171,7 @@ const Map = () => {
   //   // Satellite icon created by Freepik - Flaticon at https://www.flaticon.com/free-icon/satellite_1072372?term=satellite&page=1&position=2&origin=search&related_id=1072372
   //   iconSize: [25, 25]
   // });
-  const bounds = [
-    [-90, -180], // Southwest coordinates
-    [90, 180]    // Northeast coordinates
-  ];
+
   return (
     <div>
       {/* Search Bar */}
