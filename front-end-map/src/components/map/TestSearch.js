@@ -2,6 +2,7 @@
 
 import { React, useState, useEffect } from "react";
 import TextField from "@mui/material/TextField";
+import { Button } from "@mui/material";
 import dummySatellites from '../DummyData';
 import DatePicker from 'react-datepicker';
 import { addDays } from 'date-fns';
@@ -9,6 +10,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import './SearchBar.css';
 
 function Search() {
+  const [satellite, setSatellite] = useState({name: "", startTime: "", endTime: "", startLat: "", startLong: "", endLat: "", endLong: ""});
   const [searchText, setSearchText] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   // date picker code
@@ -24,16 +26,14 @@ function Search() {
   
   // performs search when user press enter key on keyboard
   // might change to a button to make it more easier for the user to use and understand
-  const handleKeyDown = (event) => {
-    if (event.key === 'Enter') {
+  const handleKeyDown = () => {
       performSearch();
-    }
   };
   
   // handles when new date is clicked
-  const handleClick = () => {
-    performSearch();
-  };
+  // const handleClick = () => {
+  //   performSearch();
+  // };
 
   // performs search through database to idenitify potential satellites of the same date or id
   const performSearch = () => {
@@ -55,18 +55,27 @@ function Search() {
         );
         setSearchResults(filteredSatellites);
       }
-      if(searchResults.length === 0) {
-        setError('No Satellites Found For Given ID and/or Date.');
-      }
-      if (searchResults.length === 1) {
-        // set satellite variable to be used in map to get the latitudes and longitudes to plot
-      }
-      console.log(searchResults);
+      validResults();
+      console.log('Search Results Satellites: ', searchResults);
     } else {
       setError('Invalid Satellite ID Input. Please Try Again.');
     }
     
   }; 
+
+  // validating the search results
+  const validResults = () => {
+    if(searchResults.length === 0 && searchText !== '') {
+      setError('No Satellites Found For Given ID and/or Date.');
+    } else {
+      setError('');
+    }
+    if (searchResults.length === 1) {
+      // set satellite variable to be used in map to get the latitudes and longitudes to plot
+      setSatellite(searchResults[0]);
+      console.log('Set Satellite', satellite);
+    }
+  }
 
   // validating user input
   const validInput = (searchInput) => {
@@ -88,8 +97,10 @@ function Search() {
     console.log('Selected Result:', result); // Log the selected result
     setSearchText(result.name); // sets search bar value with the selected satellite's name
     setSearchResults([result]); // sets searchresults = to the satellite selected
+    setSatellite(result);
     // set satellite variable to specific instant
     console.log('SearchResults Current: ', searchResults);
+    console.log('Set Satellite to: ', satellite);
   };
 
   // ensures error status is being updated continuously
@@ -109,9 +120,14 @@ function Search() {
 
   // ensures that performSearch is called whenever searchText or startDate is changed
   useEffect(() => {
-    performSearch();
-  }, [searchText, startDate])
+    setError('');
+  }, [searchText, startDate]);
 
+  useEffect(() => {
+    if (searchResults === 1) {
+      setSatellite(searchResults[0]);
+    }
+  }, [searchResults]);
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
       <div className="SearchBar">
@@ -121,7 +137,7 @@ function Search() {
           }}
           value={searchText}
           onChange={handleSearchChange}
-          onKeyDown={handleKeyDown}
+          // onKeyDown={handleKeyDown}
           label="Search"
           variant="outlined"
           fullWidth
@@ -163,7 +179,7 @@ function Search() {
         <DatePicker 
           selected={startDate} 
           onChange={(date) => setStartDate(date)} 
-          onInputClick={handleClick}
+          // onInputClick={handleClick}
           // showTimeSelect
           // timeFormat="HH:mm"
           // timeIntervals={60}
@@ -172,9 +188,28 @@ function Search() {
           // minDate={new Date()}
         />        
       </div>   
+      <div>
+          <Button variant="contained" 
+            style={{
+              width: '80px', 
+              top: '30px',  
+              textTransform: 'none'}}
+              onClick={handleKeyDown}
+          >
+            Search
+          </Button>
+        </div>
       {startDate.toUTCString()}
       <br/>
       {searchResults.length}
+      <br/>
+      {searchText}
+      <br/>
+      {satellite.name !== "" && (<div className="info"> 
+        {satellite.startLat} + {satellite.startLong}
+        <br/>
+        {satellite.endLat} + {satellite.endLong}
+      </div>)}
     </div>
   );
 }

@@ -31,3 +31,7 @@
     /* overflow: visible; */
     z-index: 2000;
   }
+
+  .info {
+    margin-top: 100px;
+  }

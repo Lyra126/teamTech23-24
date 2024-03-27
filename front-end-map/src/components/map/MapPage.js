@@ -5,24 +5,12 @@
 // Please make sure to write comments as you go to help with future reference
 import React, { useState } from 'react';
 import Map from './Map';
-// import SearchBar from './searchBar'
 import Search from './TestSearch'
 
 const MapPage = () => {
-
-  // // add for satellite data to be passed to map
-  // const [objectData, setObjectData] = useState(null);
-
-  // const handleSearch = (data) => {
-  //   // Update the objectData in the state
-  //   setObjectData(data);
-  // };
-
   return (
     <div>
-      {/* updated search bar */}
-      <Search/>
-      {/* <SearchBar onSearch={handleSearch}/> */} 
+      {/* <Search/> */}
       <Map />
     </div>    
   )
