@@ -8,6 +8,9 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { timeZone, location } from './components/Navbar';
+
+
 
 function convertMilitaryStringToTime(militaryTimeString) {
   const [hours, minutes, seconds] = militaryTimeString.split(':');
@@ -18,6 +21,7 @@ function convertMilitaryStringToTime(militaryTimeString) {
 
   return currentDate;
 }
+
 
 const ShowEvents = ( startDate ) => {
   // create loop that searches for specific date
@@ -62,7 +66,10 @@ const ShowEvents = ( startDate ) => {
         
 
         
-        
+        console.log(start);
+        console.log(startDate);
+        console.log(end);
+        console.log(nextDay);
         
         if(start === startDate || end === nextDay) {
           newSatelliteItems.push(satelliteItem);
@@ -80,7 +87,7 @@ const ShowEvents = ( startDate ) => {
     }
 
     getItems();
-  }, [startDate]);
+  }, [startDate]);  
 
   return (
     <div className="Events"
@@ -106,23 +113,22 @@ const ShowEvents = ( startDate ) => {
         <h2
           style={{
             color: '#6a1fa4',
-            
           }}>
-            27 degrees north and 82 degrees west
+            {location}
         </h2>
         <h3>Number of Satellites: {satelliteItems.length} satellites</h3>
+        <h5 style ={{color: '#FF0000'}}> This schedule expires in 1 to 3 days! </h5>
         
-          
       <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650, backgroundColor: '#FFFFFF',border: '5px solid purple'} } aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell align="center" sx={{fontWeight: 'bold', fontSize: '130%'}}>SSC</TableCell>
             <TableCell align="center" sx={{fontWeight: 'bold', fontSize: '130%'}}>
-                Start Time (UTC)
+                Start Time ({timeZone})
             </TableCell>
             <TableCell align="center" sx={{fontWeight: 'bold', fontSize: '130%'}}>
-              End Time (UTC)
+              End Time ({timeZone})
             </TableCell>
           </TableRow>
         </TableHead>

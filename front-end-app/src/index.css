@@ -2,8 +2,8 @@
   font-family: sans-serif;
   text-align: center;
   min-height: 700px;
-  background-color: #ffffff;
-  background-image: url("images/background.jpg");
+  background-color: #000000;
+  /*background-image: url("images/background.jpg");*/
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
@@ -78,17 +78,18 @@ body {
   font-weight: 300;
   line-height: 1.5;
   background: var(--bg-color);
-  --text-color: #FFD300;
+  --text-color: #ffffff;
   color: var(--text-color);
   position: relative;
 }
 
 header {
-  display: block;
-  width: 100%;
-  padding: 1.75em 0;
-  border-bottom: 2px solid var(--border-color);
+  display: flex;
+  width: 18%;
+  padding: 1px;
+  border-bottom: 3px solid var(--border-color);
   background: var(--whitespace-color);
+  left: 0;
 }
 
 header #logo {
@@ -283,6 +284,66 @@ main {
   width: calc(100% / 7);
 }
 
+
+.sidenav {
+  width: 263px;
+  background: #765985;
+  position: absolute;
+  top: 5em;
+  right: 5em;
+  left: -100%;
+  height: auto;
+  padding: 1px;
+  transition: all 0.7s;
+  overflow: hidden;
+}
+
+
+.sidenav.active {
+  left: 1.25em;
+}
+
+ul {
+  padding: 0;
+}
+
+ul li {
+  list-style-type: none;
+  margin: 0px 0;
+}
+
+ul li a {
+  color: #f4fadb;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 6px;
+}
+
+ul li a:hover,
+ul li a.active {
+  background: #dd8ef6;
+}
+
+header svg{
+  font-size: 40px;
+}
+
+.hamburger-icon {
+  margin-left: 15em; 
+}
+
+Footer {
+  height: 35px;
+  background-color: #F5F5F5;
+  padding-top: 5px;
+  width: 100%;
+  margin: 0;
+}
+
+
+
 Footer {
   height: 35px;
   background-color: #F5F5F5;
@@ -316,4 +377,3 @@ th {
   border-bottom: 2px solid purple;
   align-items: center;
 } */
-
