@@ -1,8 +1,8 @@
 .navbar {
     /*gives width, height and color*/
-    width: 100%;
+    width: 100px;
     height: 100px;
-    background: #b0b2b8;
-    font-family: "Times New Roman", Times, serif;
+    background: #edbff9;
+    font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif ;
     font-size: 25px;
 }
