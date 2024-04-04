@@ -169,6 +169,7 @@ const Calendar = ({ showDetailsHandle }) => {
         {renderFooter()}
         {/* {ShowEvents()} */}
       </div>
+      
       <div className="Events">
         
         {ShowEvents( format(selectedDate, "yyyy-MM-dd"))} 
@@ -184,5 +185,4 @@ export default Calendar;
  * icon for switching to the previous month,
  * formatted date showing current month and year,
  * another icon for switching to next month
- * icons should also handle onClick events to change a month
- */
+ * icons should also handle onClick events to change a month */
