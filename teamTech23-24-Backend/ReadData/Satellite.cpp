@@ -231,7 +231,6 @@ void Satellite::generatePasses(){
             if (visibleEnd.Minute() - visibleStart.Minute() > 1) {
                 passes.push_back(access);
             }
-            //std::cout << "Satellite visible from " << visibleStart << " to " << visibleEnd << "\n";
         }
 
         if (passes.size() > 0) {
