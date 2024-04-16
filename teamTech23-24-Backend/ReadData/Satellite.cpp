@@ -243,6 +243,9 @@ void Satellite::generatePasses(){
         std::cerr << "Decayed satellite: " << e.what() << std::endl;
         // Skip processing the current satellite and continue with the next one
         return;
+    }catch (const libsgp4::SatelliteException& e) {
+        std::cerr << "Satellite exception: " << e.what() << std::endl;
+        return;
     }
 }
 

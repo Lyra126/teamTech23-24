@@ -1,0 +1,24 @@
+{ "name": "Austin", "schedule": [
+  { "name": "29079", "startTime": "2024-04-16 17:53:20.000000 UTC", "endTime": "2024-04-16 17:58:29.000000 UTC", "startTimeLat": "25.6445", "startTimeLong": "106.905", "endTimeLat": "44.9866", "endTimeLong": "101.793" },
+  { "name": "29079", "startTime": "2024-04-16 17:53:20.000000 UTC", "endTime": "2024-04-16 17:58:29.000000 UTC", "startTimeLat": "25.6445", "startTimeLong": "106.905", "endTimeLat": "44.9866", "endTimeLong": "101.793" },
+  { "name": "29079", "startTime": "2024-04-16 17:53:20.000000 UTC", "endTime": "2024-04-16 17:58:29.000000 UTC", "startTimeLat": "25.6445", "startTimeLong": "106.905", "endTimeLat": "44.9866", "endTimeLong": "101.793" },
+  { "name": "28654", "startTime": "2024-04-16 18:05:39.000000 UTC", "endTime": "2024-04-16 18:18:20.000000 UTC", "startTimeLat": "4.26338", "startTimeLong": "67.7768", "endTimeLat": "48.3989", "endTimeLong": "55.1937" },
+  { "name": "28654", "startTime": "2024-04-16 18:05:39.000000 UTC", "endTime": "2024-04-16 18:18:20.000000 UTC", "startTimeLat": "4.26338", "startTimeLong": "67.7768", "endTimeLat": "48.3989", "endTimeLong": "55.1937" },
+  { "name": "28654", "startTime": "2024-04-16 18:05:39.000000 UTC", "endTime": "2024-04-16 18:18:20.000000 UTC", "startTimeLat": "4.26338", "startTimeLong": "67.7768", "endTimeLat": "48.3989", "endTimeLong": "55.1937" },
+  { "name": "28893", "startTime": "2024-04-16 18:27:01.000000 UTC", "endTime": "2024-04-16 18:36:32.000000 UTC", "startTimeLat": "18.0003", "startTimeLong": "107.277", "endTimeLat": "52.2236", "endTimeLong": "96.926" },
+  { "name": "28893", "startTime": "2024-04-16 18:27:01.000000 UTC", "endTime": "2024-04-16 18:36:32.000000 UTC", "startTimeLat": "18.0003", "startTimeLong": "107.277", "endTimeLat": "52.2236", "endTimeLong": "96.926" },
+  { "name": "28893", "startTime": "2024-04-16 18:27:01.000000 UTC", "endTime": "2024-04-16 18:36:32.000000 UTC", "startTimeLat": "18.0003", "startTimeLong": "107.277", "endTimeLat": "52.2236", "endTimeLong": "96.926" }
+]},
+{ "name": "Sarasota", "schedule": [
+]},
+{ "name": "Tokyo", "schedule": [
+  { "name": "27606", "startTime": "2024-04-16 17:44:14.000000 UTC", "endTime": "2024-04-16 17:47:01.000000 UTC", "startTimeLat": "46.2101", "startTimeLong": "69.7229", "endTimeLat": "53.8178", "endTimeLong": "79.7545" },
+  { "name": "27606", "startTime": "2024-04-16 17:44:14.000000 UTC", "endTime": "2024-04-16 17:47:01.000000 UTC", "startTimeLat": "46.2101", "startTimeLong": "69.7229", "endTimeLat": "53.8178", "endTimeLong": "79.7545" },
+  { "name": "27606", "startTime": "2024-04-16 17:44:14.000000 UTC", "endTime": "2024-04-16 17:47:01.000000 UTC", "startTimeLat": "46.2101", "startTimeLong": "69.7229", "endTimeLat": "53.8178", "endTimeLong": "79.7545" },
+  { "name": "26998", "startTime": "2024-04-16 18:06:31.000000 UTC", "endTime": "2024-04-16 18:19:15.000000 UTC", "startTimeLat": "50.1418", "startTimeLong": "67.2231", "endTimeLat": "5.10807", "endTimeLong": "82.432" },
+  { "name": "26998", "startTime": "2024-04-16 18:06:31.000000 UTC", "endTime": "2024-04-16 18:19:15.000000 UTC", "startTimeLat": "50.1418", "startTimeLong": "67.2231", "endTimeLat": "5.10807", "endTimeLong": "82.432" },
+  { "name": "26998", "startTime": "2024-04-16 18:06:31.000000 UTC", "endTime": "2024-04-16 18:19:15.000000 UTC", "startTimeLat": "50.1418", "startTimeLong": "67.2231", "endTimeLat": "5.10807", "endTimeLong": "82.432" },
+  { "name": "28058", "startTime": "2024-04-16 18:19:45.000000 UTC", "endTime": "2024-04-16 18:22:06.000000 UTC", "startTimeLat": "43.2961", "startTimeLong": "54.4095", "endTimeLat": "34.9288", "endTimeLong": "51.7035" },
+  { "name": "28058", "startTime": "2024-04-16 18:19:45.000000 UTC", "endTime": "2024-04-16 18:22:06.000000 UTC", "startTimeLat": "43.2961", "startTimeLong": "54.4095", "endTimeLat": "34.9288", "endTimeLong": "51.7035" },
+  { "name": "28058", "startTime": "2024-04-16 18:19:45.000000 UTC", "endTime": "2024-04-16 18:22:06.000000 UTC", "startTimeLat": "43.2961", "startTimeLong": "54.4095", "endTimeLat": "34.9288", "endTimeLong": "51.7035" }
+]},
