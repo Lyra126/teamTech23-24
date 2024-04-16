@@ -49,7 +49,7 @@ set(SOURCE ${DIR}/CoordGeodetic.h      ${DIR}/CoordGeodetic.cc
            ${DIR}/SGP4.h               ${DIR}/SGP4.cc
            ${DIR}/Eci.h                ${DIR}/Eci.cc
            ${DIR}/Vector.h             ${DIR}/Vector.cc
-           Satellite.cpp schedule.cpp Satellite.h)
+           Satellite.cpp schedule.cpp Satellite.h groundStation.cpp groundStation.h)
 
 
 
