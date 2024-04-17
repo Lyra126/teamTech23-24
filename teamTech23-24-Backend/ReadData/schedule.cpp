@@ -12,6 +12,42 @@
 #include <algorithm>
 #include <cstdlib>
 #include <ctime>
+#include <thread>
+
+// Define a mutex for synchronization
+std::mutex mtx;
+
+// Function to read TLE data from chunks, create satellite objects, and generate passes
+void processTLEData(const std::string& chunk, std::vector<Satellite>& rank1Satellites, std::vector<Satellite>& rank2Satellites, std::vector<Satellite>& rank3Satellites){
+        std::istringstream iss(chunk);
+        std::string line1, line2, line3;
+
+        // Read TLE data from the chunk
+        while (getline(iss, line1) && getline(iss, line2) && getline(iss, line3)) {
+            // Create a TLE object with line 1 and line 2 as arguments
+            libsgp4::Tle tle(line1, line2, line3);
+            // Create a satellite object with the TLE
+            Satellite satellite(tle, libsgp4::DateTime::Now());
+
+            // Generate passes for the satellite
+            satellite.generatePasses();
+
+            // Assign the rank to the satellite
+            satellite.assignRank();
+
+            // Add the satellite to the appropriate vector based on its rank (synchronization needed)
+            std::lock_guard<std::mutex> lock(mtx);
+            if(satellite.isLEO() && satellite.getNumPasses() > 0) {
+                if (satellite.getRank() == 1)
+                    rank1Satellites.push_back(satellite);
+                else if (satellite.getRank() == 2)
+                    rank2Satellites.push_back(satellite);
+                else if (satellite.getRank() == 3)
+                    rank3Satellites.push_back(satellite);
+            }
+        }
+
+}
 
 const int numGenerations = 5;
 map<string, std::vector<Satellite>> createSchedule(vector<vector<Satellite>>& ranks);
@@ -19,51 +55,60 @@ void writeToFile(map<string, std::vector<Satellite>> schedule);
 
 int main() {
     libsgp4::DateTime currentTime = libsgp4::DateTime::Now();
+    const std::string filename = "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/celestrakList.txt";
+    const int numThreads = 10; // Number of threads you want to use
 
-    // Initialize variables for reading input file
-    std::string buffer;
-    std::fstream input("/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/celestrakList.txt"); // The file of satellites is found in the debug folder
-    string line1, line2;
+    // Read the file and count the number of lines
+    std::ifstream input(filename);
+    std::stringstream buffer;
+    buffer << input.rdbuf();
 
-    //Initialize variables for scheduler
-    vector<vector<Satellite>> ranks;
-    vector<Satellite> rank1;
-    vector<Satellite> rank2;
-    vector<Satellite> rank3;
-    ranks.push_back(rank1);
-    ranks.push_back(rank2);
-    ranks.push_back(rank3);
+    // Count the number of lines in the file
+    std::string fileContent = buffer.str();
 
-    // Read in data from active.txt file until you reach the end of the file
-    while(getline(input, buffer)){
-        getline(input, line1);
-        getline(input, line2);
-        //line1.pop_back(); // Gets rid of carriage return character
-        //line2.pop_back(); // Gets rid of carriage return character
-        //create a TLE object with line 1 and line 2 as arguments
-        libsgp4::Tle tle(line1, line2);
-        //create a satellite object with the tle as an argument
-        Satellite satellite(tle, currentTime);
+    int numLines = std::count(fileContent.begin(), fileContent.end(), '\n') + 1;
 
-        if(!satellite.getConstrSuccess())
-            continue;
+    // Adjust the number of lines per thread to be divisible by 3
+    int linesPerThread = (numLines + numThreads - 1) / numThreads; // Rounded up
+    linesPerThread -= linesPerThread % 3; // Ensure divisibility by 3
 
-        if(satellite.isLEO()){
-            satellite.generatePasses();
-            // Satellite does not pass over
-            if(satellite.getNumPasses() == 0)
-                continue;
-            satellite.toString();
-            satellite.assignRank();
+    // Divide the file content into chunks for each thread
+    std::vector<std::string> chunks;
+    std::istringstream iss(fileContent);
+    std::string chunk = "", temp;
 
-            if(satellite.getRank() == 1)
-                ranks[0].push_back(satellite);
-            else if(satellite.getRank() == 2)
-                ranks[1].push_back(satellite);
-            else if(satellite.getRank() == 3)
-                ranks[2].push_back(satellite);
+
+    std::string line;
+    int numberOfLines = 0;
+    while (std::getline(iss, line)) {
+        chunk += line + '\n'; // Add the line to the chunk
+        numberOfLines++;
+        if (numberOfLines >= linesPerThread) {
+            numberOfLines = 0;
+            chunks.push_back(chunk);
+            chunk.clear();
         }
     }
+
+    // Create vectors to hold satellites for each rank
+    std::vector<Satellite> rank1Satellites, rank2Satellites, rank3Satellites;
+
+    // Create threads and process TLE data in parallel
+    std::vector<std::thread> threads;
+    for (int i = 0; i < numThreads; ++i) {
+        threads.emplace_back(processTLEData, std::ref(chunks.at(i)), std::ref(rank1Satellites), std::ref(rank2Satellites), std::ref(rank3Satellites));
+    }
+
+    // Join the threads
+    for (auto& thread : threads) {
+        thread.join();
+    }
+
+    // Merge the satellite vectors into a single vector
+    vector<vector<Satellite>> ranks;
+    ranks.push_back(rank1Satellites);
+    ranks.push_back(rank2Satellites);
+    ranks.push_back(rank3Satellites);
 
     cout << "-- Satellites all ranked --" << endl;
 
