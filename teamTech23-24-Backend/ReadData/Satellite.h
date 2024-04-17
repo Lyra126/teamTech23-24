@@ -65,7 +65,7 @@ class Satellite {
         float getStartTimeLongitude() const;
         float getEndTimeLatitude() const;
         float getEndTimeLongitude() const;
-
+        void printPasses() const;
         libsgp4::Tle getTle() const;
         std::vector<std::pair<libsgp4::DateTime, libsgp4::DateTime>> getPasses() const;
         libsgp4::DateTime getDt() const;

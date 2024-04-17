@@ -134,7 +134,7 @@ std::map<std::string, std::vector<Satellite>> createRandomSchedule(std::map<std:
 
                     // Store the found index in stationIndexes
                     stationIndexes.push_back(index);
-                    }
+                }
                 int bestGS = 0;
                 for (const auto& station : scheduleMap) {
                     auto currBestStation = scheduleMap.begin();

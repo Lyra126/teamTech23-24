@@ -116,6 +116,13 @@ bool Satellite::getConstrSuccess() const{
     return constructorSuccess;
 }
 
+void Satellite::printPasses() const{
+    for (auto pair : this->passes){
+        cout << pair.first << " - " << pair.second << endl;
+    }
+}
+
+
 
 //mutators
 bool Satellite::setStartAndEndTime(){
