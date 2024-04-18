@@ -23,7 +23,7 @@ function convertMilitaryStringToTime(militaryTimeString) {
 }
 
 
-const ShowEvents = ( startDate, time, location ) => {
+const ShowEvents = ( startDate ) => {
   // create loop that searches for specific date
   // day = format(day, "MM/dd/YYYY");
   // call search function to search for specific date
@@ -64,12 +64,6 @@ const ShowEvents = ( startDate, time, location ) => {
         const dayUpdate = (parseInt(start.substring(8,10))+1).toString().padStart(2,'0');
         const nextDay = start.substring(0,8) + dayUpdate
         
-
-        
-        console.log(start);
-        console.log(startDate);
-        console.log(end);
-        console.log(nextDay);
         
         if(start === startDate || end === nextDay) {
           newSatelliteItems.push(satelliteItem);
@@ -117,42 +111,80 @@ const ShowEvents = ( startDate, time, location ) => {
             {location}
         </h2>
         <h3>Number of Satellites: {satelliteItems.length} satellites</h3>
-        <h5 style ={{color: '#FF0000'}}> This schedule expires in 1 to 3 days! </h5>
         
-      <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650, backgroundColor: '#FFFFFF',border: '5px solid purple'} } aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell align="center" sx={{fontWeight: 'bold', fontSize: '130%'}}>SSC</TableCell>
-            <TableCell align="center" sx={{fontWeight: 'bold', fontSize: '130%'}}>
-                Start Time ({timeZone})
-            </TableCell>
-            <TableCell align="center" sx={{fontWeight: 'bold', fontSize: '130%'}}>
-              End Time ({timeZone})
-            </TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {satelliteItems.map((item, index) => (
-            <TableRow
-              key={index}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell align="center" component="th" scope="satelliteItems" sx={{fontSize: '90%'}}>
-                {item[0]}
-              </TableCell>
-              <TableCell align="center" sx={{fontSize: '90%'}}>
-                {item[1]}
-              </TableCell>
-              <TableCell align="center" sx={{fontSize: '90%'}}>
-                {item[2]}
-              </TableCell>
+        
+        
+        
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 650, backgroundColor: '#FFFFFF', border: '5px solid purple' }} aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell align="center" sx={{fontWeight: 'bold', fontSize: '130%'}}>SSC</TableCell>
+                <TableCell align="center" sx={{fontWeight: 'bold', fontSize: '130%'}}>
+                  Start Time ({timeZone})
+                </TableCell>
+                <TableCell align="center" sx={{fontWeight: 'bold', fontSize: '130%'}}>
+                  End Time ({timeZone})
+                </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {satelliteItems.map((item, index) => {
+                const [startHoursStr, startMinutesStr, startSecondsStr] = item[1].split(":");
+                const startHours = parseInt(startHoursStr, 10);
 
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+                let adjustedStartHours;
+                if (timeZone === "UTC-05") {
+                  adjustedStartHours = startHours - 5;
+                } else if (timeZone === "UTC-08") {
+                  adjustedStartHours = startHours - 8;
+                } else {
+                  adjustedStartHours = startHours;
+                }
+
+                adjustedStartHours = (adjustedStartHours + 24) % 24;
+
+                const adjustedStartHoursStr = adjustedStartHours < 10 ? "0" + adjustedStartHours : adjustedStartHours.toString();
+                const adjustedStartTime = `${adjustedStartHoursStr}:${startMinutesStr}:${startSecondsStr}`;
+
+                const [endHoursStr, endMinutesStr, endSecondsStr] = item[2].split(":");
+                const endHours = parseInt(endHoursStr, 10);
+
+                let adjustedEndHours;
+                if (timeZone === "UTC-05") {
+                  adjustedEndHours = endHours - 5;
+                } else if (timeZone === "UTC-08") {
+                  adjustedEndHours = endHours - 8;
+                } else {
+                  adjustedEndHours = endHours;
+                }
+
+                adjustedEndHours = (adjustedEndHours + 24) % 24;
+
+                const adjustedEndHoursStr = adjustedEndHours < 10 ? "0" + adjustedEndHours : adjustedEndHours.toString();
+                const adjustedEndTime = `${adjustedEndHoursStr}:${endMinutesStr}:${endSecondsStr}`;
+
+                return (
+                  <TableRow
+                    key={index}
+                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                  >
+                    <TableCell align="center" component="th" scope="satelliteItems" sx={{fontSize: '90%'}}>
+                      {item[0]}
+                    </TableCell>
+                    <TableCell align="center" component="th" scope="satelliteItems" sx={{fontSize: '90%'}}>
+                      {adjustedStartTime}
+                    </TableCell>
+                    <TableCell align="center" sx={{fontSize: '90%'}}>
+                      {adjustedEndTime}
+                    </TableCell>
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </TableContainer>
+
 
 
 
