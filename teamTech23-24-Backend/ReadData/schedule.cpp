@@ -54,9 +54,11 @@ map<string, std::vector<Satellite>> createSchedule(vector<vector<Satellite>>& ra
 void writeToFile(map<string, std::vector<Satellite>> schedule);
 
 int main() {
+    // Start the timer
+    auto startTime = std::chrono::high_resolution_clock::now();
     libsgp4::DateTime currentTime = libsgp4::DateTime::Now();
-    const std::string filename = "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/celestrakList.txt";
-    const int numThreads = 10; // Number of threads you want to use
+    const std::string filename = "/Users/cc/Downloads/CSProjects/teamTech23-24/teamTech23-24-Backend/ReadData/celestrakList.txt";
+    const int numThreads = 64; // Number of threads you want to use
 
     // Read the file and count the number of lines
     std::ifstream input(filename);
@@ -113,6 +115,12 @@ int main() {
     cout << "-- Satellites all ranked --" << endl;
 
     writeToFile(createSchedule(ranks));
+    // End the timer
+    auto endTime = std::chrono::high_resolution_clock::now();
+
+    // Calculate the duration in seconds
+    std::chrono::duration<double> duration = endTime - startTime;
+    std::cout << "Time taken: " << duration.count() << " seconds" << std::endl;
     return 0;
 }
 

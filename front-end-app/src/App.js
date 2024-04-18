@@ -12,6 +12,8 @@ export default function App() {
     const [showDetails, setShowDetails] = useState(false);
     const [showNav, setShowNav] = useState(false);
     const [data, setData] = useState(null);
+    const [time, setTime] = userState(timeZone);
+    const [loc, setLocation] = useState(location);
     const showDetailsHandle = (dayStr) => {
         setData(dayStr);
         setShowDetails(true);
@@ -20,16 +22,16 @@ export default function App() {
 return (
     <div className="App">
         <header>
-         <GiHamburgerMenu onClick={() => setShowNav(!showNav)}/>
-    <h4> Additional Preferences </h4>
-    </header>
-    {<Navbar />}
-    <h1>CACI Satellite Scheduler</h1>
-    <Calendar showDetailsHandle={showDetailsHandle} />
-    <Navbar show={showNav}/>
-    <div className="Footer">
-    <img src={logo} width={'100'}/>
-    </div>
+            <GiHamburgerMenu onClick={() => setShowNav(!showNav)}/>
+            <h4> Additional Preferences </h4>
+        </header>
+        {<Navbar />}
+            <h1>CACI Satellite Scheduler</h1>
+            <Calendar time = {time} location = {loc} showDetailsHandle={showDetailsHandle} />
+        <Navbar show={showNav} setTime = {setTime} setLocation={setLocation}/>
+        <div className="Footer">
+            <img src={logo} width={'100'}/>
+        </div>
     </div>
 
 );

@@ -24,26 +24,32 @@ export const Navbar = ({ show }) => {
 
   const handleClickUTC = () => {
     timeZone = "UTC"; // Update timeZone directly
+    setTime(timeZone);
   };
 
   const handleClickEST = () => {
     timeZone = "UTC-05"; // Update timeZone directly
+    setTime(timeZone);
   };
 
   const handleClickPST = () => {
     timeZone = "UTC-08"; // Update timeZone directly
+    setTime(timeZone);
   };
 
   const handleClickTF = () => {
     location = "Tampa, Florida"; // Update location directly
+    setLocation(location);
   };
 
   const handleClickTJ = () => {
     location = "Tokyo, Japan"; // Update location directly
+    setLocation(location);
   };
 
   const handleClickAT = () => {
     location = "Austin, Texas"; // Update location directly
+    setLocation(location);
   };
 
   return (

@@ -23,7 +23,7 @@ function convertMilitaryStringToTime(militaryTimeString) {
 }
 
 
-const ShowEvents = ( startDate ) => {
+const ShowEvents = ( startDate, time, location ) => {
   // create loop that searches for specific date
   // day = format(day, "MM/dd/YYYY");
   // call search function to search for specific date
