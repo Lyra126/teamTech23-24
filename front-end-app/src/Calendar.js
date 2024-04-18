@@ -15,7 +15,7 @@ import {
 import "./Event.js";
 import ShowEvents from "./Event.js";
 
-const Calendar = ({ showDetailsHandle }) => {
+const Calendar = ({ showDetailsHandle, time, location }) => {
 
   const [satelliteItems, setSatellite] = useState([]);
 
@@ -172,7 +172,7 @@ const Calendar = ({ showDetailsHandle }) => {
       
       <div className="Events">
         
-        {ShowEvents( format(selectedDate, "yyyy-MM-dd"))} 
+        {ShowEvents( format(selectedDate, "yyyy-MM-dd"), time, location)} 
       </div>
     </div>
     

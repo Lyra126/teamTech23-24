@@ -9,13 +9,15 @@ import Details from "./Details";
 import logo from "./images/sweCaciLogo.png";
 import ShowEvents from "./Event";
 import Map from "./components/Map.js";
-import Navbar from "./components/Navbar.js"
+import {Navbar, timeZone, location} from "./components/Navbar"
 import { GiHamburgerMenu } from "react-icons/gi";
 
 function App () {
     const [showDetails, setShowDetails] = useState(false);
     const [showNav, setShowNav] = useState(false);
     const [data, setData] = useState(null);
+    const [time, setTime] = useState(timeZone);
+    const [loc, setLocation] = useState(location);
     const showDetailsHandle = (dayStr) => {
         setData(dayStr);
         setShowDetails(true);
@@ -37,8 +39,7 @@ function App () {
     }
   return (
     <Router>
-    <div className="App">
-      
+      <div className="App">
         <Routes>
           <Route path="/" exact element={
             <div>
@@ -48,8 +49,8 @@ function App () {
               </header>
               {<Navbar/>}
               <h1>CACI Satellite Scheduler</h1>
-              <Calendar showDetailsHandle={showDetailsHandle} />
-              <Navbar show={showNav}/>
+              <Calendar time = {time} location = {loc} showDetailsHandle={showDetailsHandle}/>
+              <Navbar show={showNav} setTime = {setTime} setLocation={setLocation}/>
             </div>}></Route>
           <Route path="/map" element={<Map/>}/>
         </Routes>

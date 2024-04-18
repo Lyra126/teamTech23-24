@@ -88,5 +88,10 @@
   "directory": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug",
   "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -std=c++17 -o CMakeFiles/TestSGP4.dir/schedule.cpp.o -c /Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/schedule.cpp",
   "file": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/schedule.cpp"
+},
+{
+  "directory": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/sgp4-master  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Wno-long-long -Wcast-align -Wsign-conversion -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -std=c++17 -o CMakeFiles/TestSGP4.dir/groundStation.cpp.o -c /Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/groundStation.cpp",
+  "file": "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/groundStation.cpp"
 }
 ]
