@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
 import './Navbar.css';
-
+import { Link } from 'react-router-dom';
 export let timeZone = "UTC"; // Export timeZone directly
 export let location = "Tampa, Florida"; // Export location directly
 
@@ -75,7 +75,7 @@ export const Navbar = ({ show }) => {
         </li>
         <li>
           <a onClick={() => toggleAccordion('openMap')}>
-            <b>Map</b> 
+            <Link to="/map"><b>Map</b></Link>
           </a>
         </li>
         <li>
