@@ -19,33 +19,33 @@ std::mutex mtx;
 
 // Function to read TLE data from chunks, create satellite objects, and generate passes
 void processTLEData(const std::string& chunk, std::vector<Satellite>& rank1Satellites, std::vector<Satellite>& rank2Satellites, std::vector<Satellite>& rank3Satellites){
-        std::istringstream iss(chunk);
-        std::string line1, line2, line3;
+    std::istringstream iss(chunk);
+    std::string line1, line2, line3;
 
-        // Read TLE data from the chunk
-        while (getline(iss, line1) && getline(iss, line2) && getline(iss, line3)) {
-            // Create a TLE object with line 1 and line 2 as arguments
-            libsgp4::Tle tle(line1, line2, line3);
-            // Create a satellite object with the TLE
-            Satellite satellite(tle, libsgp4::DateTime::Now());
+    // Read TLE data from the chunk
+    while (getline(iss, line1) && getline(iss, line2) && getline(iss, line3)) {
+        // Create a TLE object with line 1 and line 2 as arguments
+        libsgp4::Tle tle(line1, line2, line3);
+        // Create a satellite object with the TLE
+        Satellite satellite(tle, libsgp4::DateTime::Now());
 
-            // Generate passes for the satellite
-            satellite.generatePasses();
+        // Generate passes for the satellite
+        satellite.generatePasses();
 
-            // Assign the rank to the satellite
-            satellite.assignRank();
+        // Assign the rank to the satellite
+        satellite.assignRank();
 
-            // Add the satellite to the appropriate vector based on its rank (synchronization needed)
-            std::lock_guard<std::mutex> lock(mtx);
-            if(satellite.isLEO() && satellite.getNumPasses() > 0) {
-                if (satellite.getRank() == 1)
-                    rank1Satellites.push_back(satellite);
-                else if (satellite.getRank() == 2)
-                    rank2Satellites.push_back(satellite);
-                else if (satellite.getRank() == 3)
-                    rank3Satellites.push_back(satellite);
-            }
+        // Add the satellite to the appropriate vector based on its rank (synchronization needed)
+        std::lock_guard<std::mutex> lock(mtx);
+        if(satellite.isLEO() && satellite.getNumPasses() > 0) {
+            if (satellite.getRank() == 1)
+                rank1Satellites.push_back(satellite);
+            else if (satellite.getRank() == 2)
+                rank2Satellites.push_back(satellite);
+            else if (satellite.getRank() == 3)
+                rank3Satellites.push_back(satellite);
         }
+    }
 
 }
 
@@ -54,9 +54,11 @@ map<string, std::vector<Satellite>> createSchedule(vector<vector<Satellite>>& ra
 void writeToFile(map<string, std::vector<Satellite>> schedule);
 
 int main() {
+    // Start the timer
+    auto startTime = std::chrono::high_resolution_clock::now();
     libsgp4::DateTime currentTime = libsgp4::DateTime::Now();
     const std::string filename = "/Users/cc/Downloads/teamTech23-24/teamTech23-24-Backend/ReadData/celestrakList.txt";
-    const int numThreads = 10; // Number of threads you want to use
+    const int numThreads = 8; // Number of threads you want to use
 
     // Read the file and count the number of lines
     std::ifstream input(filename);
@@ -113,6 +115,12 @@ int main() {
     cout << "-- Satellites all ranked --" << endl;
 
     writeToFile(createSchedule(ranks));
+    // End the timer
+    auto endTime = std::chrono::high_resolution_clock::now();
+
+    // Calculate the duration in seconds
+    std::chrono::duration<double> duration = endTime - startTime;
+    std::cout << "Time taken: " << duration.count() << " seconds" << std::endl;
     return 0;
 }
 
