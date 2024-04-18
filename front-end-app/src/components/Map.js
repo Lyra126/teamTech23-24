@@ -188,12 +188,49 @@ const Map = () => {
 
   return (
     <div className='overall'>
+      <Button 
+        variant="contained" 
+        style={{
+          width: '150px',   
+          textTransform: 'none',
+          position: 'absolute',
+          justifyContent: 'left',
+          left: '20px', // Adjust this value to change the distance from the left edge of the page
+          top: '20px',
+        }}
+        href='/' rel='noopener'>
+        Back to Calendar
+      </Button>
+      <h1>CACI Satellite Scheduler</h1>
       {/* Search Bar */}
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <div className="SearchBar">
           <TextField
-            style={{
-              width:'200px'
+            sx={{
+              width:'200px',
+              '& .MuiInputBase-input': {
+                color: 'black', // Text color
+              },
+              '& .MuiInputBase-root': {
+                backgroundColor: 'lightgray', // Background color
+              },
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                  borderColor: 'purple', // Outline color
+                },
+                '&:hover fieldset': {
+                  borderColor: 'purple', // Outline color on hover
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: 'purple', // Outline color when focused
+                },
+              },
+              '& .MuiFormLabel-root': {
+                color: 'purple', // Label text color
+              },
+              '& .MuiFormLabel-root.Mui-focused': {
+                color: 'purple', // Label text color when focused
+              },
             }}
             value={searchText}
             onChange={handleSearchChange}
@@ -229,12 +266,12 @@ const Map = () => {
           <DatePicker 
             selected={startDate} 
             onChange={(date) => setStartDate(date)} 
-            // showTimeSelect
-            // timeFormat="HH:mm"
-            // timeIntervals={60}
-            // timeCaption="time"
-            // maxDate={addDays(new Date(), 7)}
-            // minDate={new Date()}
+            showTimeSelect
+            timeFormat="HH:mm"
+            timeIntervals={60}
+            timeCaption="time"
+            maxDate={addDays(new Date(), 7)}
+            minDate={new Date()}
           />        
         </div>
         <div className='SearchButton'>

@@ -51,7 +51,9 @@ function App () {
               <h1>CACI Satellite Scheduler</h1>
               <Calendar time = {time} location = {loc} showDetailsHandle={showDetailsHandle}/>
               <Navbar show={showNav} setTime = {setTime} setLocation={setLocation}/>
-            </div>}></Route>
+            </div>}>
+          </Route>
+          
           <Route path="/map" element={<Map/>}/>
         </Routes>
         
