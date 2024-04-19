@@ -32,12 +32,16 @@ int Satellite::getRank() const{
     return rank;
 }
 
+string Satellite::getID() const{
+    return tle.IntDesignator();
+}
+
 string Satellite::getStartString() const{
-    return startString;
+    return startTime.ToString();
 }
 
 string Satellite::getEndString() const{
-    return endString;
+    return endTime.ToString();
 }
 
 
@@ -344,9 +348,20 @@ bool Satellite::operator==(const Satellite& other) const {
 }
 
 
-void Satellite::toString(){
-    name = tle.Name();
-    startString = startTime.ToString();
-    endString = endTime.ToString();
+void Satellite::toString() const {
+    cout << "Name: " << getName() << endl;
+    cout << "ID: " << getID() << endl;
+    cout << "Start Time: " << getStartString() << endl;
+    cout << "End Time: " << getEndString() << endl;
+    cout << "Start Latitude: " << getStartTimeLatitude() << endl;
+    cout << "Start Longitude: " << getStartTimeLongitude() << endl;
+    cout << "End Latitude: " << getEndTimeLatitude() << endl;
+    cout << "End Longitude: " << getEndTimeLongitude() << endl;
+    cout << "Max Elevation: " << getMaxElevation() << endl;
+    cout << "Pass Number: " << getPassNumber() << endl;
+    cout << "Number of Passes: " << getNumPasses() << endl;
+    for(auto pass: getPasses())
+        cout << pass.first << " - " << pass.second << endl;
 }
+
 

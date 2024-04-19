@@ -44,6 +44,7 @@ class Satellite {
             constructorSuccess = true;
             maxElevation = 0;
             passNumber = -1;
+            name = tle1.Name();
             try{
                 eci = sgp4.FindPosition(dt);
                 geo = eci.ToGeodetic();
@@ -57,6 +58,7 @@ class Satellite {
         //accessors
         string getName() const;
         int getRank() const;
+        string getID() const;
         string getStartString() const;
         string getEndString() const;
         libsgp4::DateTime getStartTime() const;
@@ -96,6 +98,6 @@ class Satellite {
         Satellite& operator= (const Satellite& rSat);
         bool operator== (const Satellite& other) const;
 
-        void toString();
+        void toString() const;
 };
 

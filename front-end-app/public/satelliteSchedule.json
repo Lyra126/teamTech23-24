@@ -1,0 +1,20 @@
+[
+  {"name": "Austin", "schedule": [
+    {"name": "NOAA 18", "ID": "05018A  ", "startTime": "2024-04-19 17:26:51.000000 UTC", "endTime": "2024-04-19 17:41:55.000000 UTC", "startTimeLat": "1.02123", "startTimeLong": "77.999", "endTimeLat": "53.3722", "endTimeLong": "62.3305"},
+    {"name": "NOAA 18", "ID": "05018A  ", "startTime": "2024-04-19 17:26:51.000000 UTC", "endTime": "2024-04-19 17:41:55.000000 UTC", "startTimeLat": "1.02123", "startTimeLong": "77.999", "endTimeLat": "53.3722", "endTimeLong": "62.3305"},
+    {"name": "NOAA 18", "ID": "05018A  ", "startTime": "2024-04-19 17:26:51.000000 UTC", "endTime": "2024-04-19 17:41:55.000000 UTC", "startTimeLat": "1.02123", "startTimeLong": "77.999", "endTimeLat": "53.3722", "endTimeLong": "62.3305"},
+    {"name": "NANOSAT-1", "ID": "04049B  ", "startTime": "2024-04-19 18:04:31.000000 UTC", "endTime": "2024-04-19 18:15:25.000000 UTC", "startTimeLat": "13.2335", "startTimeLong": "102.444", "endTimeLat": "52.9423", "endTimeLong": "90.7802"},
+    {"name": "NANOSAT-1", "ID": "04049B  ", "startTime": "2024-04-19 18:04:31.000000 UTC", "endTime": "2024-04-19 18:15:25.000000 UTC", "startTimeLat": "13.2335", "startTimeLong": "102.444", "endTimeLat": "52.9423", "endTimeLong": "90.7802"},
+    {"name": "NANOSAT-1", "ID": "04049B  ", "startTime": "2024-04-19 18:04:31.000000 UTC", "endTime": "2024-04-19 18:15:25.000000 UTC", "startTimeLat": "13.2335", "startTimeLong": "102.444", "endTimeLat": "52.9423", "endTimeLong": "90.7802"},
+    {"name": "RADIO ROSTO (RS-15)", "ID": "94085A  ", "startTime": "2024-04-19 18:22:57.000000 UTC", "endTime": "2024-04-19 18:42:42.000000 UTC", "startTimeLat": "35.4493", "startTimeLong": "33.6365", "endTimeLat": "64.3542", "endTimeLong": "112.042"},
+    {"name": "RADIO ROSTO (RS-15)", "ID": "94085A  ", "startTime": "2024-04-19 18:22:57.000000 UTC", "endTime": "2024-04-19 18:42:42.000000 UTC", "startTimeLat": "35.4493", "startTimeLong": "33.6365", "endTimeLat": "64.3542", "endTimeLong": "112.042"},
+    {"name": "RADIO ROSTO (RS-15)", "ID": "94085A  ", "startTime": "2024-04-19 18:22:57.000000 UTC", "endTime": "2024-04-19 18:42:42.000000 UTC", "startTimeLat": "35.4493", "startTimeLong": "33.6365", "endTimeLat": "64.3542", "endTimeLong": "112.042"}
+  ]},
+  {"name": "Sarasota", "schedule": [
+  ]},
+  {"name": "Tokyo", "schedule": [
+    {"name": "ORBCOMM FM27", "ID": "98053G  ", "startTime": "2024-04-19 17:12:54.000000 UTC", "endTime": "2024-04-19 17:14:49.000000 UTC", "startTimeLat": "44.9985", "startTimeLong": "101.008", "endTimeLat": "44.0831", "endTimeLong": "110.083"},
+    {"name": "ORBCOMM FM27", "ID": "98053G  ", "startTime": "2024-04-19 17:12:54.000000 UTC", "endTime": "2024-04-19 17:14:49.000000 UTC", "startTimeLat": "44.9985", "startTimeLong": "101.008", "endTimeLat": "44.0831", "endTimeLong": "110.083"},
+    {"name": "ORBCOMM FM27", "ID": "98053G  ", "startTime": "2024-04-19 17:12:54.000000 UTC", "endTime": "2024-04-19 17:14:49.000000 UTC", "startTimeLat": "44.9985", "startTimeLong": "101.008", "endTimeLat": "44.0831", "endTimeLong": "110.083"}
+  ]}
+]

@@ -51,9 +51,23 @@ void processTLEData(const std::string& chunk, std::vector<Satellite>& rank1Satel
 
 const int numGenerations = 5;
 map<string, std::vector<Satellite>> createSchedule(vector<vector<Satellite>>& ranks);
-void writeToFile(map<string, std::vector<Satellite>> schedule);
+void writeToFile(const std::map<std::string, std::vector<Satellite>>& schedule);
+libsgp4::TimeSpan findDuration(Satellite &sat);
 
 int main() {
+//    std::string line1 = "CALSPHERE 1";
+//    std::string line2 = "1 00900U 64063C   24109.11342102  .00001630  00000+0  16969-2 0  9990";
+//    std::string line3 = "2 00900  90.2031  54.0901 0025958 155.9529 333.4496 13.74913474962776";
+//    libsgp4::Tle tle(line1, line2, line3);
+//    Satellite satellite(tle, libsgp4::DateTime::Now());
+//    satellite.generatePasses();
+//    satellite.assignRank();
+//    cout << satellite.getName() << endl;
+//    cout << satellite.getID() << endl;
+//    cout << findDuration(satellite) << endl;
+//    cout << findDuration(satellite).ToString() << endl;
+
+
     // Start the timer
     auto startTime = std::chrono::high_resolution_clock::now();
     libsgp4::DateTime currentTime = libsgp4::DateTime::Now();
@@ -115,13 +129,28 @@ int main() {
 
     cout << "-- Satellites all ranked --" << endl;
 
-    writeToFile(createSchedule(ranks));
+    auto schedule = createSchedule(ranks);
+    writeToFile(schedule);
     // End the timer
     auto endTime = std::chrono::high_resolution_clock::now();
 
     // Calculate the duration in seconds
     std::chrono::duration<double> duration = endTime - startTime;
     std::cout << "Time taken: " << duration.count() << " seconds" << std::endl;
+
+    //for testing purposes
+    int totalNumSatellitesScheduled = 0;
+    libsgp4::TimeSpan totalSatelliteDuration = libsgp4::TimeSpan(0,0,0,0,0);
+    for(auto pair: schedule) {
+        totalNumSatellitesScheduled += pair.second.size();
+        for (auto sat: pair.second) {
+
+            totalSatelliteDuration = totalSatelliteDuration + findDuration(sat);
+        }
+    }
+    cout << "The generated schedule contains " << totalNumSatellitesScheduled << " satellites." << endl;
+    //hours, mins, seconds
+    cout << "Generated schedule length: " << totalSatelliteDuration << endl;
     return 0;
 }
 
@@ -411,7 +440,7 @@ map<string, std::vector<Satellite>> createSchedule(vector<vector<Satellite>>& ra
     return optimalSchedule;
 }
 
-void writeToFile(map<string, std::vector<Satellite>> schedule){
+void writeToFile(const std::map<std::string, std::vector<Satellite>>& schedule) {
     cout << "-- Starting to write schedule to json file  --" << endl;
     std::ofstream file("satelliteSchedule.json");
 
@@ -421,47 +450,60 @@ void writeToFile(map<string, std::vector<Satellite>> schedule){
         return;
     }
 
-    // Iterate through each ground station in the schedule map
-    for (const auto& entry : schedule) {
-        const std::string& groundStationName = entry.first;
-        const std::vector<Satellite>& satelliteSchedule = entry.second;
+    // Write the opening bracket for the JSON array
+    file << "[" << std::endl;
 
-        // Write the ground station name to the file
-        file << R"({ "name": ")" << groundStationName << R"(", "schedule": [)" << std::endl;
+    // Iterate through each ground station in the schedule map
+    auto it = schedule.begin();
+    while (it != schedule.end()) {
+        const std::string& groundStationName = it->first;
+        const std::vector<Satellite>& satelliteSchedule = it->second;
+
+        // Write the JSON object for each ground station
+        file << "  {\"name\": \"" << groundStationName << "\", \"schedule\": [" << std::endl;
 
         // Iterate through each satellite in the ground station's schedule
         for (size_t i = 0; i < satelliteSchedule.size(); ++i) {
             const Satellite& satellite = satelliteSchedule[i];
 
-            // Write satellite information to the file
-            file << R"(  { "name": ")" << satellite.getName() << "\", "
-                 << R"("startTime": ")" << satellite.getStartString() << "\", "
-                 << R"("endTime": ")" << satellite.getEndString() << "\", "
-                 << R"("startTimeLat": ")" << satellite.getStartTimeLatitude() << "\", "
-                 << R"("startTimeLong": ")" << satellite.getStartTimeLongitude() << "\", "
-                 << R"("endTimeLat": ")" << satellite.getEndTimeLatitude() << "\", "
-                 << R"("endTimeLong": ")" << satellite.getEndTimeLongitude() << "\" }";
+            for(size_t i = 0; i < satellite.getPasses().size(); ++i) {
+                // Write the JSON object for each satellite
+                file << R"(    {"name": ")" << satellite.getName() << "\", "
+                     << R"("ID": ")" << satellite.getID() << "\", "
+                     << R"("startTime": ")" << satellite.getPasses()[i].first << "\", "
+                     << R"("endTime": ")" << satellite.getPasses()[i].second << "\", "
+                     << R"("startTimeLat": ")" << satellite.getStartTimeLatitude() << "\", "
+                     << R"("startTimeLong": ")" << satellite.getStartTimeLongitude() << "\", "
+                     << R"("endTimeLat": ")" << satellite.getEndTimeLatitude() << "\", "
+                     << R"("endTimeLong": ")" << satellite.getEndTimeLongitude() << "\"}";
 
-            // Add a comma if this is not the last satellite in the schedule
-            if (i != satelliteSchedule.size() - 1) {
-                file << ",";
+                if (i != satellite.getPasses().size() - 1)
+                    file << ",";
+
+                file << std::endl;
             }
-
+            // Add comma if it's not the last satellite
+            if (i != satelliteSchedule.size() - 1)
+                file << ",";
             file << std::endl;
         }
 
-        // Close the array and object for the current ground station
-        file << "]}";
+        // Write the closing bracket for the schedule array
+        file << "  ]}";
 
-        // Add a comma if this is not the last ground station in the schedule
-        if (entry != *schedule.rbegin()) {
+        // Add comma if it's not the last ground station
+        ++it;
+        if (it != schedule.end())
             file << ",";
-        }
 
         file << std::endl;
     }
 
+    // Write the closing bracket for the JSON array
+    file << "]" << std::endl;
+
     // Close the file
     file.close();
-    cout << "-- Fished creating json file  --" << endl;
+
+    cout << "-- Finished creating json file  --" << endl;
 }
