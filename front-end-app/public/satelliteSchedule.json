@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [
   {"name": "Austin", "schedule": [
     {"name": "NOAA 18", "ID": "05018A  ", "startTime": "2024-04-19 17:26:51.000000 UTC", "endTime": "2024-04-19 17:41:55.000000 UTC", "startTimeLat": "1.02123", "startTimeLong": "77.999", "endTimeLat": "53.3722", "endTimeLong": "62.3305"},
@@ -18,3 +19,68 @@
     {"name": "ORBCOMM FM27", "ID": "98053G  ", "startTime": "2024-04-19 17:12:54.000000 UTC", "endTime": "2024-04-19 17:14:49.000000 UTC", "startTimeLat": "44.9985", "startTimeLong": "101.008", "endTimeLat": "44.0831", "endTimeLong": "110.083"}
   ]}
 ]
+=======
+{ "name": "Austin", "schedule": [
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "4.75564", "startTimeLong": "70.6335", "endTimeLat": "37.6322", "endTimeLong": "112.228" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "4.75564", "startTimeLong": "70.6335", "endTimeLat": "37.6322", "endTimeLong": "112.228" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "4.75564", "startTimeLong": "70.6335", "endTimeLat": "37.6322", "endTimeLong": "112.228" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "51.3028", "startTimeLong": "102.722", "endTimeLat": "2.48825", "endTimeLong": "88.464" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "51.3028", "startTimeLong": "102.722", "endTimeLat": "2.48825", "endTimeLong": "88.464" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "51.3028", "startTimeLong": "102.722", "endTimeLat": "2.48825", "endTimeLong": "88.464" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "39.8841", "startTimeLong": "106.814", "endTimeLat": "13.7224", "endTimeLong": "100.451" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "39.8841", "startTimeLong": "106.814", "endTimeLat": "13.7224", "endTimeLong": "100.451" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "39.8841", "startTimeLong": "106.814", "endTimeLat": "13.7224", "endTimeLong": "100.451" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "8.67975", "startTimeLong": "72.1214", "endTimeLat": "17.5187", "endTimeLong": "102.842" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "8.67975", "startTimeLong": "72.1214", "endTimeLat": "17.5187", "endTimeLong": "102.842" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "8.67975", "startTimeLong": "72.1214", "endTimeLat": "17.5187", "endTimeLong": "102.842" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "40.0676", "startTimeLong": "112.493", "endTimeLat": "12.2465", "endTimeLong": "105.145" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "40.0676", "startTimeLong": "112.493", "endTimeLat": "12.2465", "endTimeLong": "105.145" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "40.0676", "startTimeLong": "112.493", "endTimeLat": "12.2465", "endTimeLong": "105.145" }
+]},
+{ "name": "Sarasota", "schedule": [
+]},
+{ "name": "Tokyo", "schedule": [
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "53.0399", "startTimeLong": "95.0746", "endTimeLat": "3.37452", "endTimeLong": "80.7661" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "53.0399", "startTimeLong": "95.0746", "endTimeLat": "3.37452", "endTimeLong": "80.7661" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "53.0399", "startTimeLong": "95.0746", "endTimeLat": "3.37452", "endTimeLong": "80.7661" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "64.924", "startTimeLong": "84.9639", "endTimeLat": "-4.37331", "endTimeLong": "96.1902" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "64.924", "startTimeLong": "84.9639", "endTimeLat": "-4.37331", "endTimeLong": "96.1902" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "64.924", "startTimeLong": "84.9639", "endTimeLat": "-4.37331", "endTimeLong": "96.1902" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "27.6732", "startTimeLong": "112.435", "endTimeLat": "47.4313", "endTimeLong": "106.446" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "27.6732", "startTimeLong": "112.435", "endTimeLat": "47.4313", "endTimeLong": "106.446" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "27.6732", "startTimeLong": "112.435", "endTimeLat": "47.4313", "endTimeLong": "106.446" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "51.5607", "startTimeLong": "94.4716", "endTimeLat": "35.9742", "endTimeLong": "109.654" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "51.5607", "startTimeLong": "94.4716", "endTimeLat": "35.9742", "endTimeLong": "109.654" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "51.5607", "startTimeLong": "94.4716", "endTimeLat": "35.9742", "endTimeLong": "109.654" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "13.3558", "startTimeLong": "58.8095", "endTimeLat": "43.1838", "endTimeLong": "110.153" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "13.3558", "startTimeLong": "58.8095", "endTimeLat": "43.1838", "endTimeLong": "110.153" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "13.3558", "startTimeLong": "58.8095", "endTimeLat": "43.1838", "endTimeLong": "110.153" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "39.0775", "startTimeLong": "105.741", "endTimeLat": "14.624", "endTimeLong": "99.986" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "39.0775", "startTimeLong": "105.741", "endTimeLat": "14.624", "endTimeLong": "99.986" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "39.0775", "startTimeLong": "105.741", "endTimeLat": "14.624", "endTimeLong": "99.986" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "62.4217", "startTimeLong": "48.1599", "endTimeLat": "-3.20832", "endTimeLong": "106.236" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "62.4217", "startTimeLong": "48.1599", "endTimeLat": "-3.20832", "endTimeLong": "106.236" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "62.4217", "startTimeLong": "48.1599", "endTimeLat": "-3.20832", "endTimeLong": "106.236" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "51.0929", "startTimeLong": "92.3108", "endTimeLat": "5.70758", "endTimeLong": "80.4842" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "51.0929", "startTimeLong": "92.3108", "endTimeLat": "5.70758", "endTimeLong": "80.4842" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "51.0929", "startTimeLong": "92.3108", "endTimeLat": "5.70758", "endTimeLong": "80.4842" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "40.2444", "startTimeLong": "108.108", "endTimeLat": "13.1833", "endTimeLong": "101.594" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "40.2444", "startTimeLong": "108.108", "endTimeLat": "13.1833", "endTimeLong": "101.594" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "40.2444", "startTimeLong": "108.108", "endTimeLat": "13.1833", "endTimeLong": "101.594" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "10.5862", "startTimeLong": "103.414", "endTimeLat": "56.0954", "endTimeLong": "74.7169" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "10.5862", "startTimeLong": "103.414", "endTimeLat": "56.0954", "endTimeLong": "74.7169" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "10.5862", "startTimeLong": "103.414", "endTimeLat": "56.0954", "endTimeLong": "74.7169" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "52.9138", "startTimeLong": "99.8948", "endTimeLat": "1.89892", "endTimeLong": "84.8238" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "52.9138", "startTimeLong": "99.8948", "endTimeLat": "1.89892", "endTimeLong": "84.8238" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "52.9138", "startTimeLong": "99.8948", "endTimeLat": "1.89892", "endTimeLong": "84.8238" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "36.0803", "startTimeLong": "113.96", "endTimeLat": "6.97896", "endTimeLong": "100.441" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "36.0803", "startTimeLong": "113.96", "endTimeLat": "6.97896", "endTimeLong": "100.441" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "36.0803", "startTimeLong": "113.96", "endTimeLat": "6.97896", "endTimeLong": "100.441" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "2.53351", "startTimeLong": "89.3924", "endTimeLat": "47.5896", "endTimeLong": "108.417" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "2.53351", "startTimeLong": "89.3924", "endTimeLat": "47.5896", "endTimeLong": "108.417" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "2.53351", "startTimeLong": "89.3924", "endTimeLat": "47.5896", "endTimeLong": "108.417" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "56.1391", "startTimeLong": "78.3009", "endTimeLat": "8.57134", "endTimeLong": "62.9991" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "56.1391", "startTimeLong": "78.3009", "endTimeLat": "8.57134", "endTimeLong": "62.9991" },
+  { "name": "", "startTime": "", "endTime": "", "startTimeLat": "56.1391", "startTimeLong": "78.3009", "endTimeLat": "8.57134", "endTimeLong": "62.9991" }
+]},
+>>>>>>> 489a975b7881531f8db1b371affd8fcd09dd8b77

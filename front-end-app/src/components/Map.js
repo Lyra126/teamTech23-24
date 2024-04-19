@@ -16,7 +16,7 @@ import image3 from "../images/yellowsatellite.png"
 
 // Search Imports
 import TextField from "@mui/material/TextField";
-import dummySatellites from '../DummyData';
+// import dummySatellites from './DummyData';
 import DatePicker from 'react-datepicker';
 import { addDays } from 'date-fns';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -33,6 +33,7 @@ const Map = () => {
   // date picker code
   const [startDate, setStartDate] = useState(new Date());
   const [error, setError] = useState('');
+  const [satelliteList, setSatelliteList] = useState([]);
 
   // updates searchText when input to textfield changes
   const handleSearchChange = (event) => {
@@ -55,14 +56,16 @@ const Map = () => {
       const date = formatDate();
       console.log('Filter Date: ', date);
       if(searchText === '') {
-        const filteredSatellites = dummySatellites.filter((satellite) =>
+        // NEED TO FIGURE OUT WHAT TO REPLACE FILTER WITH AS I CAN'T USE IT WITH THE DATABASE
+        // OR SOMETHING IS OFF
+        const filteredSatellites = satelliteList.filter((satellite) =>
           satellite.startTime.substring(0, 10).includes(date)
         );
         setSearchResults(filteredSatellites);
         console.log(searchResults);
       } else {
         // Perform the search logic based on searchText
-        const filteredSatellites = dummySatellites.filter((satellite) =>
+        const filteredSatellites = satellite.filter((satellite) =>
           satellite.name.toLowerCase().includes(searchText.trim().toLowerCase()) && satellite.startTime.substring(0, 10).includes(date)
         );
         setSearchResults(filteredSatellites);
@@ -172,14 +175,62 @@ const Map = () => {
   //   iconSize: [25, 25]
   // });
 
+  // GETTING DATA FROM DATABASE
+  useEffect(() => {
+    async function getItems() {
+      const response = await fetch("http://localhost:8080/api/satellite");
+      const newSatellite = await response.json();
+      setSatelliteList(newSatellite);
+      // console.log("sat items", satelliteList);
+    }
+    getItems();
+  }, [satelliteList]);
+
   return (
     <div className='overall'>
+      <Button 
+        variant="contained" 
+        style={{
+          width: '150px',   
+          textTransform: 'none',
+          position: 'absolute',
+          justifyContent: 'left',
+          left: '20px', // Adjust this value to change the distance from the left edge of the page
+          top: '20px',
+        }}
+        href='/' rel='noopener'>
+        Back to Calendar
+      </Button>
+      <h1>CACI Satellite Scheduler</h1>
       {/* Search Bar */}
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <div className="SearchBar">
           <TextField
-            style={{
-              width:'200px'
+            sx={{
+              width:'200px',
+              '& .MuiInputBase-input': {
+                color: 'black', // Text color
+              },
+              '& .MuiInputBase-root': {
+                backgroundColor: 'lightgray', // Background color
+              },
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                  borderColor: 'purple', // Outline color
+                },
+                '&:hover fieldset': {
+                  borderColor: 'purple', // Outline color on hover
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: 'purple', // Outline color when focused
+                },
+              },
+              '& .MuiFormLabel-root': {
+                color: 'purple', // Label text color
+              },
+              '& .MuiFormLabel-root.Mui-focused': {
+                color: 'purple', // Label text color when focused
+              },
             }}
             value={searchText}
             onChange={handleSearchChange}
@@ -215,12 +266,12 @@ const Map = () => {
           <DatePicker 
             selected={startDate} 
             onChange={(date) => setStartDate(date)} 
-            // showTimeSelect
-            // timeFormat="HH:mm"
-            // timeIntervals={60}
-            // timeCaption="time"
-            // maxDate={addDays(new Date(), 7)}
-            // minDate={new Date()}
+            showTimeSelect
+            timeFormat="HH:mm"
+            timeIntervals={60}
+            timeCaption="time"
+            maxDate={addDays(new Date(), 7)}
+            minDate={new Date()}
           />        
         </div>
         <div className='SearchButton'>
