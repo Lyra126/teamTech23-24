@@ -184,11 +184,11 @@ void Satellite::assignRank() {
 
     if (!isLEO()) {
         rank = 0; // satellite is tossed out when 0
-    } else if (mean_motion >= 17 || maxElevation >= 1.047) {
+    } else if (mean_motion >= 15 || maxElevation >= 0.785398) {
         rank = 1;
-    } else if ((15 <= mean_motion && mean_motion <= 16) || (0.524 <= maxElevation)) {
+    } else if (mean_motion >= 14.5 || maxElevation >= 0.523599) {
         rank = 2;
-    } else if((0.175 <= maxElevation)) {
+    } else if(maxElevation >= 0.175) {
         rank = 3;
     } else { // Angle of elevation is too low
         rank = 0;
@@ -235,7 +235,7 @@ void Satellite::generatePasses(){
                     if (visibleEnd.Minute() - visibleStart.Minute() > 1) {
                         passes.push_back(access);
                     }
-                    std::cout << "Satellite visible from " << visibleStart << " to " << visibleEnd << "\n";
+                    std::cout <<"Satellite visible from " << visibleStart << " to " << visibleEnd << "\n";
                     visible = false;
                 }
             }

@@ -40,7 +40,7 @@ class Satellite {
 
     public:
         //constructor
-        Satellite(libsgp4::Tle tle1, libsgp4::DateTime currentTime): tle(tle1), dt(currentTime), eci(dt, 1, 1, 1), obs(29,82,1), sgp4(tle){
+        Satellite(libsgp4::Tle tle1, libsgp4::DateTime currentTime): tle(tle1), dt(currentTime), eci(dt, 1, 1, 1), obs(29,-82,1), sgp4(tle){
             constructorSuccess = true;
             maxElevation = 0;
             passNumber = -1;

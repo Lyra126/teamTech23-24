@@ -77,7 +77,7 @@ int main() {
 
     // Create vectors to hold satellites for each rank
     std::vector<Satellite> rank1Satellites, rank2Satellites, rank3Satellites;
-    
+
    // cout << "-- Generating passes --" << endl;
     // Create threads and process TLE data in parallel
     std::vector<std::thread> threads;
@@ -108,16 +108,17 @@ int main() {
     std::cout << "Time taken: " << duration.count() << " seconds" << std::endl;
 
     //for testing purposes
+    //std::map<std::string, std::vector<std::pair<Satellite, int>>>
     int totalNumSatellitesScheduled = 0;
     libsgp4::TimeSpan totalSatelliteDuration = libsgp4::TimeSpan(0,0,0,0,0);
     for(auto pair: schedule) {
         totalNumSatellitesScheduled += pair.second.size();
         for (auto sat: pair.second) {
-
             totalSatelliteDuration = totalSatelliteDuration + findDuration(sat.first);
         }
     }
-    cout << "The generated schedule contains " << totalNumSatellitesScheduled << " satellites." << endl;
+
+    cout << "The generated schedule contains " << totalNumSatellitesScheduled << " satellites passes." << endl;
     //hours, mins, seconds
     cout << "Generated schedule length: " << totalSatelliteDuration << endl;
     return 0;
@@ -457,7 +458,7 @@ map<string, std::vector<std::pair<Satellite, int>>> createSchedule(vector<vector
         tempSchedule = createRandomSchedule(emptyMap, ranks);
         preferred = calculateFitness(tempSchedule, optimalSchedule);
         cout << "Preferred: " << preferred << endl;
-        optimalSchedule = combineSchedules(preferred, optimalSchedule, tempSchedule);
+        optimalSchedule = combineSchedules(preferred, tempSchedule, optimalSchedule);
     }
     cout << "-- Schedule created --" << endl;
     return optimalSchedule;
