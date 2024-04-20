@@ -10,9 +10,9 @@ import "leaflet/dist/leaflet.css";
 import './Map.css'
 // importing Icon to show satellite icon
 import { Icon, marker } from "leaflet";
-import image1 from "../images/greensatellite.png"
-import image2 from "../images/orangesatellite.png"
-import image3 from "../images/yellowsatellite.png"
+import austinIcon from "../images/austin_ground.png"
+import tokyoIcon from "../images/tokyo_ground.png"
+import sarasotaIcon from "../images/sarasota_ground.png"
 
 // Search Imports
 import TextField from "@mui/material/TextField";
@@ -26,7 +26,7 @@ import { Button } from '@mui/material';
 // Map and Search Page
 const Map = () => {
   // Satellite Element Variable
-  const [satellite, setSatellite] = useState({name: "", startTime: "", endTime: "", startLat: "", startLong: "", endLat: "", endLong: ""});
+  const [satellite, setSatellite] = useState({name: "", startTime: "", endTime: "", startTimeLat: "", startTimeLong: "", endTimeLat: "", endTimeLong: ""});
   // Search Bar Functions & Variables
   const [searchText, setSearchText] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -39,7 +39,7 @@ const Map = () => {
   const handleSearchChange = (event) => {
     console.log('change');
     setError('');
-    setSearchText(event.target.value.trim());
+    setSearchText(event.target.value);
   };
   
   // performs search when user press enter key on keyboard
@@ -50,24 +50,37 @@ const Map = () => {
   
   // performs search through database to idenitify potential satellites of the same date or id
   const performSearch = () => {
-    // setError('');
-    console.log('perfom');
-    if (validInput(searchText.trim())) {
+    setError('');
+    
+    if (validInput(searchText)) {
       const date = formatDate();
       console.log('Filter Date: ', date);
       if(searchText === '') {
-        // NEED TO FIGURE OUT WHAT TO REPLACE FILTER WITH AS I CAN'T USE IT WITH THE DATABASE
-        // OR SOMETHING IS OFF
-        const filteredSatellites = satelliteList.filter((satellite) =>
-          satellite.startTime.substring(0, 10).includes(date)
-        );
+        console.log("Filtering By Date:");
+        const filteredSatellites = satelliteList.filter((satellite) => {
+            if (satellite.startTime.substring(0, 10).includes(date)) {
+              console.log(satellite.ID);
+            }
+            return satellite.startTime.substring(0, 10).includes(date)
+        });
+        console.log(filteredSatellites.startDate);
+        console.log("Filtered", filteredSatellites);
         setSearchResults(filteredSatellites);
         console.log(searchResults);
       } else {
+        console.log("Filtering by Name & Date:");
         // Perform the search logic based on searchText
-        const filteredSatellites = satellite.filter((satellite) =>
-          satellite.name.toLowerCase().includes(searchText.trim().toLowerCase()) && satellite.startTime.substring(0, 10).includes(date)
-        );
+        const filteredSatellites = satelliteList.filter((satellite) => {
+          if (satellite.ID.includes(searchText)) {
+            console.log(satellite.ID);
+          }
+          if (satellite.startTime.substring(0, 10).includes(date)) {
+            console.log(satellite.startTime);
+          }
+          return satellite.ID.includes(searchText) && satellite.startTime.substring(0, 10).includes(date)
+        });
+        console.log(filteredSatellites.startDate);
+        console.log("Filtered", filteredSatellites);
         setSearchResults(filteredSatellites);
       }
       validResults();
@@ -93,7 +106,8 @@ const Map = () => {
   }
   // validating user input
   const validInput = (searchInput) => {
-    return searchInput === '' || /^\d{1,5}$/.test(searchInput);
+    console.log("Search Input", searchInput);
+    return searchInput === '' || /^.{1,6}$/.test(searchInput);
   };
 
   // formating date received to allow it to be compared to the one in the database
@@ -109,7 +123,7 @@ const Map = () => {
   // helps when user selects from our list
   const handleResultSelect = (result) => {
     console.log('Selected Result:', result); // Log the selected result
-    setSearchText(result.name); // sets search bar value with the selected satellite's name
+    setSearchText(result.ID); // sets search bar value with the selected satellite's name
     setSearchResults([result]); // sets searchresults = to the satellite selected
     setSatellite(result);
     // set satellite variable to specific instant
@@ -120,7 +134,7 @@ const Map = () => {
   // ensures error status is being updated continuously
   useEffect(() => {
     if(validInput(searchText)) {
-      setError('');
+      // setError('');
       if(searchText !== '' && searchText.length === 5) {
         if (searchResults.length === 0) {
           setError('No Satellites Found For Given ID and Date Combo');
@@ -129,62 +143,93 @@ const Map = () => {
     } else {
       setError('Invalid Satellite ID Input. Please Try Again.')
     }
-    
+    // console.log("Error Message Use Effect Valid Input Error:", error);
   }, [searchText, searchResults]);
 
   // ensures that performSearch is called whenever searchText or startDate is changed
   useEffect(() => {
     setError('');
+    // console.log("Error Message Use Effect:", error);
   }, [searchText, startDate]);
 
   useEffect(() => {
     if (searchResults === 1) {
       setSatellite(searchResults[0]);
     }
+    // console.log("Use Effect Set Sat: ", searchResults);
   }, [searchResults]);
 
   // Map Functions & Variables
   const [mapCenter, setMapCenter] = React.useState([0.0, 0.0]); // Default center
   
   // icon
-  const greensatIcon = new Icon({
-    iconUrl: image1,
+  const austinGroundIcon = new Icon({
+    iconUrl: austinIcon,
     // Satellite icon created by Freepik - Flaticon at https://www.flaticon.com/free-icon/satellite_1072372?term=satellite&page=1&position=2&origin=search&related_id=1072372
     iconSize: [25, 25]
   });
 
-  const orangesatIcon = new Icon({
-    iconUrl: image2,
+  const tokyoGroundIcon = new Icon({
+    iconUrl: tokyoIcon,
     // Satellite icon created by Freepik - Flaticon at https://www.flaticon.com/free-icon/satellite_1072372?term=satellite&page=1&position=2&origin=search&related_id=1072372
     iconSize: [25, 25]
   });
 
-  const yellowsatIcon = new Icon({
-    iconUrl: image3,
+  const sarasotaGroundIcon = new Icon({
+    iconUrl: sarasotaIcon,
     // Satellite icon created by Freepik - Flaticon at https://www.flaticon.com/free-icon/satellite_1072372?term=satellite&page=1&position=2&origin=search&related_id=1072372
     iconSize: [25, 25]
   });
-
+  
   useEffect(() => {
     setMapCenter(0.0, satellite.startLong);
   }, [satellite])
 
-  // const satIcon = new Icon({
-  //   iconUrl: image3,
-  //   // Satellite icon created by Freepik - Flaticon at https://www.flaticon.com/free-icon/satellite_1072372?term=satellite&page=1&position=2&origin=search&related_id=1072372
-  //   iconSize: [25, 25]
-  // });
-
   // GETTING DATA FROM DATABASE
   useEffect(() => {
-    async function getItems() {
-      const response = await fetch("http://localhost:8080/api/satellite");
-      const newSatellite = await response.json();
-      setSatelliteList(newSatellite);
-      // console.log("sat items", satelliteList);
+    const getItems = async() => {
+      try {
+        const response = await fetch("http://localhost:8080/api/satellite");
+        const satelliteSched = await response.json();
+        // Create an array to store all schedules
+        let allSchedules = [];
+        satelliteSched.forEach((satellite) => {
+          const { schedule } = satellite;
+
+          // Trim excess whitespace from ID for each satellite
+          const trimmedSchedule = schedule.map((sat) =>
+            sat.ID.length > 5 ? { ...sat, ID: sat.ID.trim() } : sat
+          );
+
+          // Concatenate the schedules to allSchedules
+          allSchedules = allSchedules.concat(trimmedSchedule);
+        });
+        // Set satelliteList to the combined schedules
+        setSatelliteList(allSchedules);
+        // console.log("Current List:", satelliteList);
+      } catch(err) {
+        console.error("Error fetching data:", err);
+      }
     }
     getItems();
   }, [satelliteList]);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault(); // Prevents the default Enter behavior (e.g., form submission)
+        performSearch();
+      }
+    };
+
+    // Add event listener when component mounts
+    document.addEventListener('keydown', handleKeyDown);
+
+    // Remove event listener when component unmounts
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [performSearch]); 
 
   return (
     <div className='overall'>
@@ -244,19 +289,20 @@ const Map = () => {
         {searchResults.length > 1 && (<div className="result-overlay" style={{
             // styling the auto filter of the search bar
               position: 'absolute',
-              top: '150px',
-              left: '10px',
+              top: '200px',
+              left: '30px',
               width: '30%',
               backgroundColor: 'white',
               border: '1px solid #ccc',
               boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
               maxHeight: '200px',
               overflowY: 'auto',
-              zIndex: '2000'}}>
+              zIndex: '2000',
+              color: 'black'}}>
             <ul>
               {searchResults.map(result => (
-                <li key={result.name} onClick={() => handleResultSelect(result)}>
-                  {result.name} {result.startTime}
+                <li key={result.ID} onClick={() => handleResultSelect(result)}>
+                  {result.ID} {result.startTime}
                 </li>
               ))}
             </ul>
@@ -266,11 +312,11 @@ const Map = () => {
           <DatePicker 
             selected={startDate} 
             onChange={(date) => setStartDate(date)} 
-            showTimeSelect
-            timeFormat="HH:mm"
-            timeIntervals={60}
-            timeCaption="time"
-            maxDate={addDays(new Date(), 7)}
+            // showTimeSelect
+            // timeFormat="HH:mm"
+            // timeIntervals={60}
+            // timeCaption="time"
+            maxDate={addDays(new Date(), 3)}
             minDate={new Date()}
           />        
         </div>
@@ -287,11 +333,6 @@ const Map = () => {
             Search
           </Button>
         </div>
-        {/* {startDate.toUTCString()}
-        <br/>
-        {searchResults.length}
-        <br/>
-        {searchText} */}
       </div>
       {/* MAP STUFF */}
       <div className='map'>
@@ -308,29 +349,24 @@ const Map = () => {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           {/* Additional map layers or components can be added here */}
-          {/* Add one test point at center of map, can edit to add satellite point with lat and lon from dataset */}
-          {/* <Marker 
-            position={[latitude, longitude]}
-            icon = {satIcon} // Add icon for satellite
-          /> */}
           <Marker // Marker for Sarasota
             position={[27.2256, -82.2608]} 
-            icon = {greensatIcon}
+            icon = {tokyoGroundIcon}
           />
           <Marker // Marker for Austin
             position={[30.26666, -97.73830]}
-            icon = {orangesatIcon}
+            icon = {austinGroundIcon}
           />
           <Marker // Marker for Tokyo
             position={[35.652832, 139.839478]} // FIXTHIS only showing on half of map rn 
-            icon = {yellowsatIcon}
+            icon = {tokyoGroundIcon}
           />
-          {satellite.name !== "" && (
+          {satellite.ID !== "" && (
           <Polyline // Line connecting Satellite Start Coordinates to Its End Coordinates
             pathOptions={{color: 'blue'}}
             positions={[
-              [satellite.startLat, satellite.startLong], 
-              [satellite.endLat, satellite.endLong],
+              [satellite.startTimeLat, satellite.startTimeLong], 
+              [satellite.endTimeLat, satellite.endTimeLong],
             ]}
           />)}
         </MapContainer>
