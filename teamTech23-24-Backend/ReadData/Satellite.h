@@ -81,6 +81,7 @@ class Satellite {
         int getNumPasses() const;
         bool getConstrSuccess() const;
         libsgp4::DateTime getEarliestEndTime() const;
+        std::pair<libsgp4::DateTime, libsgp4::DateTime> getPass(int index) const;
 
         //mutators
         bool setStartAndEndTime();

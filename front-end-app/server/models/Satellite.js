@@ -4,6 +4,7 @@ const SatelliteSchema = new mongoose.Schema({
     name: { type: String, required: true },
     schedule: [{
         name: { type: String, required: true },
+        ID: { type: String, required: true},
         startTime: { type: String, required: true },
         endTime: { type: String, required: true },
         startTimeLat: { type: String, required: true },

@@ -120,6 +120,10 @@ bool Satellite::getConstrSuccess() const{
     return constructorSuccess;
 }
 
+std::pair<libsgp4::DateTime, libsgp4::DateTime> Satellite::getPass(int index) const{
+    return passes[index];
+}
+
 void Satellite::printPasses() const{
     for (auto pair : this->passes){
         cout << pair.first << " - " << pair.second << endl;
