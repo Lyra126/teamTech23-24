@@ -108,7 +108,7 @@ const ShowEvents = ( startDate, timeZone, location ) => {
             </TableHead>
             <TableBody>
               {selectedSchedule.map((item, index) => {
-     
+                const [startYear, startMonth, startDay] = item.startTime.split("-");
                 const [startHoursStr, startMinutesStr, startSecondsStr] = item.startTime.split(":");
                 const startHours = parseInt(startHoursStr, 10);
 
@@ -124,8 +124,9 @@ const ShowEvents = ( startDate, timeZone, location ) => {
                 adjustedStartHours = (adjustedStartHours + 24) % 24;
 
                 const adjustedStartHoursStr = adjustedStartHours < 10 ? "0" + adjustedStartHours : adjustedStartHours.toString();
-                const adjustedStartTime = `${adjustedStartHoursStr}:${startMinutesStr}:${startSecondsStr}`;
+                const adjustedStartTime = `${startMonth}-${startDay.substring(0, 2)}   ${adjustedStartHoursStr}:${startMinutesStr}:${startSecondsStr}`;
 
+                const [endYear, endMonth, endDay] = item.endTime.split("-");
                 const [endHoursStr, endMinutesStr, endSecondsStr] = item.endTime.split(":");
                 const endHours = parseInt(endHoursStr, 10);
 
@@ -141,7 +142,7 @@ const ShowEvents = ( startDate, timeZone, location ) => {
                 adjustedEndHours = (adjustedEndHours + 24) % 24;
 
                 const adjustedEndHoursStr = adjustedEndHours < 10 ? "0" + adjustedEndHours : adjustedEndHours.toString();
-                const adjustedEndTime = `${adjustedEndHoursStr}:${endMinutesStr}:${endSecondsStr}`;
+                const adjustedEndTime = `${endMonth}-${endDay.substring(0, 2)}   ${adjustedEndHoursStr}:${endMinutesStr}:${endSecondsStr}`;
 
                 return (
                   <TableRow
