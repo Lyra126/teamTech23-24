@@ -40,13 +40,30 @@ const ShowEvents = ( startDate, timeZone, location ) => {
           const { name, schedule } = satellite;
           switch (name) {
             case "Sarasota":
-              setSarasotaSchedule(schedule);
+              schedule.sort(function(a,b){
+                return new Date(a.startTime) - new Date(b.startTime);
+              });
+              // filter
+              const sarasotaSorted = schedule.filter((sat) => sat.startTime.substring(0,10).includes(startDate.substring(0,10)))
+              setSarasotaSchedule(sarasotaSorted);
               break;
             case "Austin":
-              setAustinSchedule(schedule);
+              // sort first
+              schedule.sort(function(a,b){
+                return new Date(a.startTime) - new Date(b.startTime);
+              });
+              // filter
+              const austinSorted = schedule.filter((sat) => sat.startTime.substring(0,10).includes(startDate.substring(0,10)));
+              // console.log("sorted:", austinSorted);
+              setAustinSchedule(austinSorted);
               break;
             case "Tokyo":
-              setTokyoSchedule(schedule);
+              schedule.sort(function(a,b){
+                return new Date(a.startTime) - new Date(b.startTime);
+              });
+              // filter
+              const tokyoSorted = schedule.filter((sat) => sat.startTime.substring(0,10).includes(startDate.substring(0,10)))
+              setTokyoSchedule(tokyoSorted);
               break;
             default:
               break;

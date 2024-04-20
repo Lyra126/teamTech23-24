@@ -1,15 +1,12 @@
-// Note: make sure to add css styling to allow for padding and search bar capability (Elle)
-// Map Team - work on map here!
-
 // Please make sure to write comments as you go to help with future reference
-import React, {useRef, useEffect, useState} from 'react'
+import React, { useEffect, useState} from 'react'
 // importing leaflet
-import { MapContainer, TileLayer, Marker, Polyline, useMapEvents } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Polyline } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 // importing css styling
 import './Map.css'
 // importing Icon to show satellite icon
-import { Icon, marker } from "leaflet";
+import { Icon } from "leaflet";
 import austinIcon from "../images/austin_ground.png"
 import tokyoIcon from "../images/tokyo_ground.png"
 import sarasotaIcon from "../images/sarasota_ground.png"
@@ -42,11 +39,14 @@ const Map = () => {
     setSearchText(event.target.value);
   };
   
+  const [searchClicked, setSearchClicked] = useState(false);
   // performs search when user press enter key on keyboard
   // might change to a button to make it more easier for the user to use and understand
   const handleKeyDown = () => {
-    performSearch();
+    setSearchClicked(!searchClicked);
   };
+
+  
   
   // performs search through database to idenitify potential satellites of the same date or id
   const performSearch = () => {
@@ -55,49 +55,31 @@ const Map = () => {
     if (validInput(searchText)) {
       const date = formatDate();
       console.log('Filter Date: ', date);
+      console.log("Search Text:", searchText);
       if(searchText === '') {
         console.log("Filtering By Date:");
-        const filteredSatellites = satelliteList.filter((satellite) => {
-            if (satellite.startTime.substring(0, 10).includes(date)) {
-              console.log(satellite.ID);
-            }
-            return satellite.startTime.substring(0, 10).includes(date)
-        });
-        console.log(filteredSatellites.startDate);
-        console.log("Filtered", filteredSatellites);
-        setSearchResults(filteredSatellites);
-        console.log(searchResults);
+        const filteredSatellites = satelliteList.filter((satellite) => 
+          satellite.startTime.substring(0, 10).includes(date));
+        setSearchResults([...filteredSatellites]);
       } else {
         console.log("Filtering by Name & Date:");
         // Perform the search logic based on searchText
-        const filteredSatellites = satelliteList.filter((satellite) => {
-          if (satellite.ID.includes(searchText)) {
-            console.log(satellite.ID);
-          }
-          if (satellite.startTime.substring(0, 10).includes(date)) {
-            console.log(satellite.startTime);
-          }
-          return satellite.ID.includes(searchText) && satellite.startTime.substring(0, 10).includes(date)
-        });
-        console.log(filteredSatellites.startDate);
-        console.log("Filtered", filteredSatellites);
-        setSearchResults(filteredSatellites);
+        const filteredSatellites = satelliteList.filter((satellite) =>
+          satellite.ID.includes(searchText) && satellite.startTime.substring(0, 10).includes(date));
+        setSearchResults([...filteredSatellites]);
       }
       validResults();
       console.log('Search Results Satellites: ', searchResults);
     } else {
       setError('Invalid Satellite ID Input. Please Try Again.');
     }
+    setSearchClicked(false);
     
   }; 
 
   // validating the search results
   const validResults = () => {
-    if(searchResults.length === 0 && searchText !== '') {
-      setError('No Satellites Found For Given ID and/or Date.');
-    } else {
-      setError('');
-    }
+
     if (searchResults.length === 1) {
       // set satellite variable to be used in map to get the latitudes and longitudes to plot
       setSatellite(searchResults[0]);
@@ -107,6 +89,7 @@ const Map = () => {
   // validating user input
   const validInput = (searchInput) => {
     console.log("Search Input", searchInput);
+    // input a length of 1 to 6 characters
     return searchInput === '' || /^.{1,6}$/.test(searchInput);
   };
 
@@ -134,16 +117,15 @@ const Map = () => {
   // ensures error status is being updated continuously
   useEffect(() => {
     if(validInput(searchText)) {
-      // setError('');
-      if(searchText !== '' && searchText.length === 5) {
+      if(searchText !== '' && searchText.length <= 6) {
         if (searchResults.length === 0) {
+          console.log("USE EFFECT");
           setError('No Satellites Found For Given ID and Date Combo');
         }
       } 
     } else {
       setError('Invalid Satellite ID Input. Please Try Again.')
     }
-    // console.log("Error Message Use Effect Valid Input Error:", error);
   }, [searchText, searchResults]);
 
   // ensures that performSearch is called whenever searchText or startDate is changed
@@ -215,21 +197,10 @@ const Map = () => {
   }, [satelliteList]);
 
   useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (event.key === 'Enter') {
-        event.preventDefault(); // Prevents the default Enter behavior (e.g., form submission)
-        performSearch();
-      }
-    };
-
-    // Add event listener when component mounts
-    document.addEventListener('keydown', handleKeyDown);
-
-    // Remove event listener when component unmounts
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [performSearch]); 
+    if (searchClicked) {
+      performSearch();
+    }
+  }, [searchClicked, performSearch])
 
   return (
     <div className='overall'>
@@ -246,94 +217,95 @@ const Map = () => {
         href='/' rel='noopener'>
         Back to Calendar
       </Button>
-      <h1>CACI Satellite Scheduler</h1>
+      <h1>CACI Satellite Schedule</h1>
       {/* Search Bar */}
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <div className="SearchBar">
-          <TextField
-            sx={{
-              width:'200px',
-              '& .MuiInputBase-input': {
-                color: 'black', // Text color
-              },
-              '& .MuiInputBase-root': {
-                backgroundColor: 'lightgray', // Background color
-              },
-              '& .MuiOutlinedInput-root': {
-                '& fieldset': {
-                  borderColor: 'purple', // Outline color
+      <div className='SearchBarArea'>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div className="SearchBar">
+            <TextField
+              sx={{
+                width:'200px',
+                '& .MuiInputBase-input': {
+                  color: 'black', // Text color
                 },
-                '&:hover fieldset': {
-                  borderColor: 'purple', // Outline color on hover
+                '& .MuiOutlinedInput-root': {
+                  '& fieldset': {
+                    borderColor: 'purple', // Outline color
+                  },
+                  '&:hover fieldset': {
+                    borderColor: 'purple', // Outline color on hover
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: 'purple', // Outline color when focused
+                  },
                 },
-                '&.Mui-focused fieldset': {
-                  borderColor: 'purple', // Outline color when focused
+                '& .MuiFormLabel-root': {
+                  color: 'purple', // Label text color
                 },
-              },
-              '& .MuiFormLabel-root': {
-                color: 'purple', // Label text color
-              },
-              '& .MuiFormLabel-root.Mui-focused': {
-                color: 'purple', // Label text color when focused
-              },
-            }}
-            value={searchText}
-            onChange={handleSearchChange}
-            label="Search"
-            variant="outlined"
-            fullWidth
-            error={!!error}
-            helperText={error}
-          />
-        </div>
-        {searchResults.length > 1 && (<div className="result-overlay" style={{
-            // styling the auto filter of the search bar
-              position: 'absolute',
-              top: '200px',
-              left: '30px',
-              width: '30%',
-              backgroundColor: 'white',
-              border: '1px solid #ccc',
-              boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-              maxHeight: '200px',
-              overflowY: 'auto',
-              zIndex: '2000',
-              color: 'black'}}>
-            <ul>
-              {searchResults.map(result => (
-                <li key={result.ID} onClick={() => handleResultSelect(result)}>
-                  {result.ID} {result.startTime}
-                </li>
-              ))}
-            </ul>
-          </div>)} 
-        {/* DATE FILTER OPTION */}
-        <div className='datepick'>
-          <DatePicker 
-            selected={startDate} 
-            onChange={(date) => setStartDate(date)} 
-            // showTimeSelect
-            // timeFormat="HH:mm"
-            // timeIntervals={60}
-            // timeCaption="time"
-            maxDate={addDays(new Date(), 3)}
-            minDate={new Date()}
-          />        
-        </div>
-        <div className='SearchButton'>
-          <Button 
-            variant="contained" 
-            style={{
-              width: '80px', 
-              top: '30px',  
-              textTransform: 'none'
-            }}
-            onClick={handleKeyDown}
-          >
-            Search
-          </Button>
+                '& .MuiFormLabel-root.Mui-focused': {
+                  color: 'purple', // Label text color when focused
+                },
+                fontSize: '18px'
+              }}
+              value={searchText}
+              onChange={handleSearchChange}
+              label="Search"
+              variant="outlined"
+              fullWidth
+              error={!!error}
+              helperText={error}
+            />
+          </div>
+          {searchResults.length > 1 && (<div className="result-overlay" style={{
+              // styling the auto filter of the search bar
+                position: 'absolute',
+                top: '200px',
+                left: '30px',
+                width: '30%',
+                backgroundColor: 'white',
+                border: '1px solid #ccc',
+                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+                maxHeight: '200px',
+                overflowY: 'auto',
+                zIndex: '2000',
+                color: 'black'}}>
+              <ul>
+                {searchResults.map(result => (
+                  <li key={result.ID} onClick={() => handleResultSelect(result)}>
+                    {result.ID} {result.startTime}
+                  </li>
+                ))}
+              </ul>
+            </div>)} 
+          {/* DATE FILTER OPTION */}
+          <div className='datepick'>
+            <DatePicker 
+              selected={startDate} 
+              onChange={(date) => setStartDate(date)} 
+              // showTimeSelect
+              // timeFormat="HH:mm"
+              // timeIntervals={60}
+              // timeCaption="time"
+              maxDate={addDays(new Date(), 3)}
+              minDate={new Date()}
+            />        
+          </div>
+          <div className='SearchButton'>
+            <Button 
+              variant="contained" 
+              style={{
+                width: '80px', 
+                top: '30px',  
+                textTransform: 'none'
+              }}
+              onClick={handleKeyDown}
+            >
+              Search
+            </Button>
+          </div>
         </div>
       </div>
+      
       {/* MAP STUFF */}
       <div className='map'>
         {/* // Make sure you set the height and width of the map container otherwise the map won't show */}
@@ -351,14 +323,14 @@ const Map = () => {
           {/* Additional map layers or components can be added here */}
           <Marker // Marker for Sarasota
             position={[27.2256, -82.2608]} 
-            icon = {tokyoGroundIcon}
+            icon = {sarasotaGroundIcon}
           />
           <Marker // Marker for Austin
             position={[30.26666, -97.73830]}
             icon = {austinGroundIcon}
           />
           <Marker // Marker for Tokyo
-            position={[35.652832, 139.839478]} // FIXTHIS only showing on half of map rn 
+            position={[35.652832, 139.839478]}
             icon = {tokyoGroundIcon}
           />
           {satellite.ID !== "" && (

@@ -48,7 +48,7 @@ function App () {
                 <h4> Additional Preferences </h4>
               </header>
               {<Navbar/>}
-              <h1>CACI Satellite Scheduler</h1>
+              <h1>CACI Satellite Schedule</h1>
               <Calendar time = {time} location = {loc} showDetailsHandle={showDetailsHandle}/>
               <Navbar show={showNav} setTime = {setTime} setLocation={setLocation}/>
             </div>}>
@@ -59,7 +59,7 @@ function App () {
         
         <br />
         <div className="Footer">
-            <img src={logo} width={'100'}/>
+            <img src={logo} height={'100%'} alt='swe x caci logo'/>
         </div>
       </div>
     </Router>
