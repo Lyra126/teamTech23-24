@@ -172,7 +172,7 @@ const Calendar = ({ showDetailsHandle, time, location }) => {
       
       <div className="Events">
         
-        {ShowEvents( format(selectedDate, "yyyy-MM-dd"), time, location)} 
+        {ShowEvents(format(selectedDate, "yyyy-MM-dd"), time, location)} 
       </div>
     </div>
     
